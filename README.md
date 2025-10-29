@@ -33,37 +33,49 @@ Die Ordnerstruktur definiert den Prozess:
 * **`04_FORGE_LOG/`**: Der Schlüssel für asynchrone Arbeit. Wöchentliche Updates, wichtige Entscheidungen oder Probleme werden hier als datierte `.md`-Datei abgelegt. Das Logbuch der Schmiede.
 * **`05_REFERENCE_LIBRARY/`**: Statisches Wissen. Konkurrenzanalysen, technische Konzepte, UI-Prinzipien. Die Bibliothek des Master Smith.
 
-## 4. Der Workflow: "Status durch Ort"
+## 4. Der Workflow: "Von der Idee zur Umsetzung"
 
-Unser gesamter Prozess basiert auf dem Verschieben von Dateien. Jede Bewegung ist ein Git-Event, jedes Event erzählt vom Fortschritt.
+Unser Prozess ist mehrstufig und nutzt KI-gestützte Commands, um von rohen Ideen zu konkreten Features zu gelangen.
 
 ### Ein typischer Durchlauf:
 
-1.  **Spark:** Eine neue Idee entsteht.
+1.  **Spark (Brainstorming):** Eine neue Idee entsteht.
     ```bash
-    git add 02_SPARK_CHAMBER/Neue-Lern-Idee.md
-    git commit -m "SPARK: Neue-Lern-Idee hinzugefügt"
+    # Interaktiver Brainstorming-Dialog mit /brainstorm
+    /brainstorm [deine Idee]
+
+    # Ergebnis: 02_SPARK_CHAMBER/2025-XX-XX-Feature-Idee.md
+    git add 02_SPARK_CHAMBER/2025-XX-XX-Feature-Idee.md
+    git commit -m "SPARK: Feature-Idee hinzugefügt"
     ```
 
-2.  **Stock:** Die Idee ist gut. Sie wird zum Rohmaterial.
+2.  **Planning:** Die Idee wird in umsetzbare Features zerlegt.
     ```bash
-    git mv 02_SPARK_CHAMBER/Neue-Lern-Idee.md 03_THE_FORGE/01_Stock/
-    git commit -m "PLAN: Neue-Lern-Idee ins Stock verschoben"
+    # Interaktiver Planning-Dialog mit /plan
+    /plan 2025-XX-XX-Feature-Idee.md
+
+    # Ergebnis: 1-N Stock Items werden direkt in 03_THE_FORGE/01_Stock/ angelegt
+    # z.B. 2025-XX-XX-01-Feature-A.md, 2025-XX-XX-02-Feature-B.md, ...
+    git add 03_THE_FORGE/01_Stock/*.md
+    git commit -m "PLAN: Feature-Idee in [N] Stock Items zerlegt"
     ```
 
 3.  **Forge:** Tim beginnt zu schmieden.
     ```bash
-    git mv 03_THE_FORGE/01_Stock/Neue-Lern-Idee.md 03_THE_FORGE/02_At_the_Anvil/
-    git commit -m "FORGE: Tim beginnt Arbeit an Neue-Lern-Idee"
+    git mv 03_THE_FORGE/01_Stock/2025-XX-XX-01-Feature-A.md 03_THE_FORGE/02_At_the_Anvil/
+    git commit -m "FORGE: Tim beginnt Arbeit an Feature-A"
     ```
 
 4.  **Temper:** Tim ist fertig. Das Werk wird gehärtet.
     ```bash
-    git mv 03_THE_FORGE/02_At_the_Anvil/Neue-Lern-Idee.md 03_THE_FORGE/03_Tempered/
-    git commit -m "TEMPER: Tim hat Neue-Lern-Idee abgeschlossen"
+    git mv 03_THE_FORGE/02_At_the_Anvil/2025-XX-XX-01-Feature-A.md 03_THE_FORGE/03_Tempered/
+    git commit -m "TEMPER: Feature-A abgeschlossen"
     ```
 
-**Pro-Tipp:** Die Git-Historie wird dadurch zu einem perfekt lesbaren Protokoll des Projekts. Maschinen lieben das. Menschen auch.
+**Pro-Tipp:**
+- Sparks bleiben in der Spark Chamber (werden nicht verschoben)
+- Stock Items sind das Ergebnis der Planning-Session
+- Die Git-Historie wird dadurch zu einem perfekt lesbaren Protokoll des Projekts. Maschinen lieben das. Menschen auch.
 
 ## 5. Asynchronität (Das Briefing-Ritual)
 

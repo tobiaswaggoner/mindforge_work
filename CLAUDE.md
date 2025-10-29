@@ -29,7 +29,8 @@ Anleitung zum Prozess für Coworker in @README.md
 
 Die Schmiede-Metapher spiegelt sich auch in Commit-Messages wider:
 
-- `SPARK: [Idee]` → Neue Idee hinzugefügt
+- `SPARK: [Idee]` → Neue Idee hinzugefügt (via `/brainstorm`)
+- `PLAN: [Task]` → Spark in Stock Items zerlegt (via `/plan`)
 - `FORGE: [Task]` → Aufgabe wird bearbeitet (in Arbeit verschoben)
 - `TEMPER: [Task]` → Aufgabe abgeschlossen (in Done verschoben)
 - `BLUEPRINT: [Strategie]` → Vision/Strategie-Update
