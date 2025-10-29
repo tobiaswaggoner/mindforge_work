@@ -1,12 +1,13 @@
 # Willkommen bei Mind Forge!
 
 Dies ist der **AI-Native Project Hub** für unser Projekt **Mind Forge**: Eine KI-gestützte Lernplattform für Schüler – geschmiedet von einem kleinen, aber feinen Team.
+Published to [Mindforge Work](https://tobiaswaggoner.github.io/mindforge_work/)
 
 ## 1. Das Team (The Smiths)
 
-* **Tobias:** Master Smith
-* **Michel:** Apprentice / Rapid Prototyping
-* **Tim:** Apprentice / Rapid Prototyping
+* **[Tobias](https://github.com/tobiaswaggoner):** Master Smith
+* **[Michi](https://github.com/milchinien):** Apprentice / Rapid Prototyping
+* **[Tim](https://github.com/Timiwagg):** Apprentice / Rapid Prototyping
 
 ## 2. Unsere Philosophie (Warum diese Schmiede?)
 
