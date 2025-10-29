@@ -1,0 +1,17 @@
+# Obsidian workspace settings (personal preferences)
+.obsidian/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*.bak
+
+# Temporary files
+*.tmp
+.vscode/settings.json
