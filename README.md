@@ -23,7 +23,7 @@ Wir verzichten bewusst auf "Old-School"-Tools wie Jira oder Azure DevOps. Unser 
 
 Die Ordnerstruktur definiert den Prozess:
 
-* **`00_HOMEBASE.md`**: (Diese Datei) Der Eingang zur Schmiede.
+* **`README.md`**: (Diese Datei) Der Eingang zur Schmiede.
 * **`01_BLUEPRINTS/`**: Die "großen" Pläne. Vision, Strategie, Roadmap. Was wollen wir bauen?
 * **`02_SPARK_CHAMBER/`**: Unser Ideenraum. Jeder Funke, jede neue Idee kommt als `.md`-Datei hier hinein. Unstrukturiert, roh, lebendig.
 * **`03_THE_FORGE/`**: Unser dynamisches Kanban-Board. Der Status einer Aufgabe wird durch ihren Ort definiert:

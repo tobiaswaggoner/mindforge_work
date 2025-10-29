@@ -34,6 +34,24 @@ Die Schmiede-Metapher spiegelt sich auch in Commit-Messages wider:
 - `TEMPER: [Task]` → Aufgabe abgeschlossen (in Done verschoben)
 - `BLUEPRINT: [Strategie]` → Vision/Strategie-Update
 
+### Ordnerstrukur
+
+* **`README.md`**: (Diese Datei) Der Eingang zur Schmiede.
+* **`01_BLUEPRINTS/`**: Die "großen" Pläne. Vision, Strategie, Roadmap. Was wollen wir bauen?
+* **`02_SPARK_CHAMBER/`**: Unser Ideenraum. Jeder Funke, jede neue Idee kommt als `.md`-Datei hier hinein. Unstrukturiert, roh, lebendig.
+* **`03_THE_FORGE/`**: Unser dynamisches Kanban-Board. Der Status einer Aufgabe wird durch ihren Ort definiert:
+    * **`01_Stock/`**: Rohmaterial. Aufgaben, die bereit zum Schmieden sind.
+    * **`02_At_the_Anvil/`**: Hier wird aktiv gearbeitet. Das Metall ist heiß, die Hämmer schwingen.
+    * **`03_Tempered/`**: Gehärtet und fertig. Abgeschlossen, bereit für Feedback oder als Artifact archiviert.
+* **`04_FORGE_LOG/`**: Der Schlüssel für asynchrone Arbeit. Wöchentliche Updates, wichtige Entscheidungen oder Probleme werden hier als datierte `.md`-Datei abgelegt. Das Logbuch der Schmiede.
+* **`05_REFERENCE_LIBRARY/`**: Statisches Wissen. Konkurrenzanalysen, technische Konzepte, UI-Prinzipien. Die Bibliothek des Master Smith.
+
+### Benutzer
+
+* **[Tobias](https://github.com/tobiaswaggoner):** Master Smith
+* **[Michi](https://github.com/milchinien):** Apprentice / Rapid Prototyping
+* **[Tim](https://github.com/Timiwagg):** Apprentice / Rapid Prototyping
+
 ### Was NICHT tun
 
 - ❌ Keine Fantasy-Sprache in Code-Kommentaren
