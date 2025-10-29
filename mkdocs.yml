@@ -2,8 +2,8 @@ site_name: Mind Forge
 site_description: AI-Native Project Hub für Mind Forge - Die Schmiede des Geistes
 site_author: Tobias Waggoner (Netzalist GmbH & Co. KG)
 
-# Documentation directory (. = root directory, not docs/)
-docs_dir: .
+# Documentation directory (will be populated by GitHub Action)
+docs_dir: docs
 
 # Repository
 repo_url: https://github.com/DEIN-USERNAME/DEIN-REPO-NAME

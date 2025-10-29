@@ -1,6 +1,10 @@
 # Obsidian workspace settings (personal preferences)
 .obsidian/
 
+# MkDocs build directories
+docs/
+site/
+
 # OS-specific files
 .DS_Store
 Thumbs.db
