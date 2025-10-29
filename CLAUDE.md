@@ -3,7 +3,7 @@
 ## Philosophie: Die Schmiede-Terminologie
 
 Dieses Repository nutzt eine **Schmiede-Metapher** als durchgängige Terminologie.
-Anleitung zum Prozess für Coworker in @00_HOMEBASE.md
+Anleitung zum Prozess für Coworker in @README.md
 
 **Wichtig:** Dies ist kein thematisches Rollenspiel, sondern professionelle Arbeit mit einem konsistenten, griffigen Vokabular. Die Metapher dient der Klarheit und dem Teamgefühl - nicht der Ablenkung.
 
