@@ -55,11 +55,8 @@ markdown_extensions:
   - md_in_html
 
 # Navigation
-# MkDocs scans all .md files automatically and creates navigation based on folder structure
-# We only define the home page explicitly
-nav:
-  - Home: README.md
-  - Für Claude: CLAUDE.md
+# No explicit nav defined - MkDocs will automatically discover all .md files
+# and create navigation based on folder structure and file names
 
 # Plugins
 plugins:
