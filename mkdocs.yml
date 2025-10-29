@@ -1,0 +1,64 @@
+site_name: Mind Forge
+site_description: AI-Native Project Hub für Mind Forge - Die Schmiede des Geistes
+site_author: Tobias Waggoner (Netzalist GmbH & Co. KG)
+
+# Repository
+repo_url: https://github.com/DEIN-USERNAME/DEIN-REPO-NAME
+repo_name: Mind Forge
+
+# Theme configuration
+theme:
+  name: material
+  language: de
+  palette:
+    # Dark mode (primary)
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Light mode
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+
+# Navigation
+# MkDocs scans all .md files automatically and creates navigation based on folder structure
+# We only define the home page explicitly
+nav:
+  - Home: README.md
+  - Für Claude: CLAUDE.md
+
+# Plugins
+plugins:
+  - search:
+      lang: de
