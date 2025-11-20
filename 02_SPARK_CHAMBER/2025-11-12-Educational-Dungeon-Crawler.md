@@ -5,7 +5,7 @@
 
 ## Vision in einem Satz
 Ein Top-Down Turn-Based Roguelike Dungeon-Crawler, bei dem Schüler durch das Lösen von Lernaufgaben in Speed-Duellen gegen Monster kämpfen und durch prozedural generierte Dungeons voller Loot und Upgrades fortschreiten.
-
+  
 ## Zielgruppe & Motivation
 - **Primäre Nutzer:** Schüler Klassenstufe 1-12 (verschiedene Schwierigkeitsstufen)
 - **Motivationale Treiber:**

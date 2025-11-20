@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Diplomas - Early Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles for Game Feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        h1, h2, h3, .cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Glow Effects */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(14, 165, 233, 0.5), 0 0 20px rgba(14, 165, 233, 0.3);
+        }
+        .glow-box {
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glow-box:hover {
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Upside Down / Gloom Theme */
+        .gloom-bg {
+            background: radial-gradient(circle at center, #1e1b4b 0%, #020617 100%);
+        }
+        
+        /* Restored / Order Theme */
+        .order-bg {
+            background: radial-gradient(circle at center, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        /* Interactive Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 1rem;
+            border: 2px solid #334155;
+        }
+        .layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: clip-path 0.1s ease;
+        }
+        .layer-content {
+            text-align: center;
+            padding: 2rem;
+        }
+        .gloom-layer {
+            background-color: #0f172a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e293b' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #94a3b8;
+        }
+        .order-layer {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e0f2fe' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #0f172a;
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #38bdf8;
+            left: 50%;
+            cursor: ew-resize;
+            z-index: 10;
+            box-shadow: 0 0 15px #38bdf8;
+        }
+        .slider-knob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #0f172a;
+            border: 2px solid #38bdf8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+        }
+
+        /* Feature Tabs */
+        .tab-btn.active {
+            border-bottom: 2px solid #38bdf8;
+            color: #38bdf8;
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Chosen Palette: Dark Slate (Gloom) & Cyan/Gold (Order) -->
+    <!-- Application Structure Plan: Single Page Landing Page designed to guide the user from the Narrative Hook -> Gameplay Mechanics -> Interactive Demo -> Pedagogical Value -> Call to Action. This structure mirrors a classic game sales funnel but integrates the learning aspect as a key selling point. -->
+    <!-- Visualization & Content Choices: Used an interactive slider to simulate the core "Room Cleaning" mechanic because it is the most visually rewarding part of the game. Used Tabs for features to keep the UI clean on mobile while providing depth. Included a mock "Skill Chart" to show the assessment value. No SVG graphics used directly in HTML flow, only icons and CSS backgrounds. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-dungeon text-sky-400 text-2xl"></i>
+                    <span class="cinzel font-bold text-xl text-white tracking-wider">Dungeons & Diplomas</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#features" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                        <a href="#science" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Die Wissenschaft</a>
+                        <a href="#roadmap" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Roadmap</a>
+                        <a href="#signup" class="bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg shadow-sky-500/20 transition-all">Early Access</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Hero Image Background -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="Hero.png" alt="Dungeons & Diplomas - Gloom vs Order"
+                 class="w-full h-full object-cover object-center"
+                 style="object-position: center 40%;">
+            <!-- Dark Overlay for text readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/90"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 mb-8 animate-bounce">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-wide uppercase text-sky-400">Jetzt im Early Access</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                Dein Schwert kann rosten.<br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-400 glow-text">Dein Wissen bleibt.</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">
+                Vergiss alles, was du über "Lernen" weißt. In diesem Rogue-lite ist dein Gehirn die tödlichste Waffe. Repariere die Realität, besiege den Nebel und werde zum Architekten der Ordnung.
+            </p>
+            
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#demo" class="px-8 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-lg shadow-xl shadow-sky-500/20 transition-all transform hover:scale-105 flex items-center gap-2">
+                    <i class="fa-solid fa-play"></i> Interaktive Demo
+                </a>
+                <a href="#features" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-lg border border-slate-700 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-scroll"></i> Mehr erfahren
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Narrative Hook: The Gloom -->
+    <section class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Die Welt zerfällt. <span class="text-purple-400">Der Nebel kommt.</span></h2>
+                    <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+                        Eine dunkle Entropie frisst die Logik unserer Realität auf. Wo Wissen vergessen wird, entstehen Glitches – monströse Verzerrungen der Wahrheit. Monster sind keine biologischen Wesen, sondern wandelnde Logikfehler.
+                    </p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        Du bist ein <strong>Lumen-Wächter</strong>. Deine Aufgabe ist nicht Zerstörung, sondern Wiederherstellung. Nutze die Gesetze des Universums – Mathematik, Grammatik, Physik – als Zaubersprüche, um das Chaos zu bändigen.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                            <i class="fa-solid fa-calculator text-sky-400 text-2xl mb-2"></i>
+                            <h3 class="font-bold text-white">Mathe ist Magie</h3>
+                            <p class="text-sm text-slate-400">Eine Gleichung ist der Zauberspruch, der Schilde bricht.</p>
+                        </div>
+                        <div class="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                            <i class="fa-solid fa-pen-nib text-purple-400 text-2xl mb-2"></i>
+                            <h3 class="font-bold text-white">Worte sind Macht</h3>
+                            <p class="text-sm text-slate-400">Grammatik sind die Runen, die die Realität schmieden.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Room Cleaning Demo -->
+                <div id="demo" class="relative">
+                    <div class="absolute -top-10 -left-10 w-20 h-20 bg-sky-500 rounded-full opacity-20 blur-xl animate-pulse"></div>
+                    <h3 class="text-center text-sm font-bold text-sky-400 uppercase tracking-widest mb-4">Interaktive Demo: Ziehe den Regler!</h3>
+                    
+                    <div class="slider-container" id="room-slider">
+                        <!-- Layer 1: Gloom (Corrupted) -->
+                        <div class="layer gloom-layer">
+                            <div class="layer-content">
+                                <i class="fa-solid fa-ghost text-6xl mb-4 text-purple-500 animate-bounce"></i>
+                                <h3 class="text-2xl cinzel font-bold text-purple-400 mb-2">Korrumpiert</h3>
+                                <p class="text-slate-500">Chaos. Unwissenheit. Glitches.</p>
+                                <div class="mt-8 flex gap-2 justify-center">
+                                    <span class="px-2 py-1 bg-red-900/30 text-red-400 text-xs rounded border border-red-900">Chaos x²</span>
+                                    <span class="px-2 py-1 bg-red-900/30 text-red-400 text-xs rounded border border-red-900">Logikfehler</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Layer 2: Order (Restored) -->
+                        <div class="layer order-layer" id="order-layer">
+                            <div class="layer-content">
+                                <i class="fa-solid fa-sun text-6xl mb-4 text-yellow-500 animate-spin-slow"></i>
+                                <h3 class="text-2xl cinzel font-bold text-slate-800 mb-2">Gereinigt</h3>
+                                <p class="text-slate-600">Ordnung. Wissen. Marmor & Licht.</p>
+                                <div class="mt-8 flex gap-2 justify-center">
+                                    <span class="px-2 py-1 bg-sky-100 text-sky-600 text-xs rounded border border-sky-200">Loot +100</span>
+                                    <span class="px-2 py-1 bg-sky-100 text-sky-600 text-xs rounded border border-sky-200">XP Boost</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slider Handle -->
+                        <div class="slider-handle" id="slider-handle">
+                            <div class="slider-knob">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-xs text-slate-500 mt-2">Bringe Ordnung in den Raum, indem du Aufgaben löst.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Features Tabs -->
+    <section id="features" class="py-20 bg-slate-800 border-y border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Gameplay Mechaniken</h2>
+                <p class="text-slate-400">Mehr als nur ein Quiz. Ein echtes Rogue-lite.</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 border-b border-slate-700 pb-1">
+                <button onclick="switchTab('hybrid')" id="tab-hybrid" class="tab-btn active px-6 py-3 text-lg font-medium text-slate-300 hover:text-white transition-colors focus:outline-none">
+                    <i class="fa-solid fa-gamepad mr-2"></i> Hybrid Flow
+                </button>
+                <button onclick="switchTab('nemesis')" id="tab-nemesis" class="tab-btn px-6 py-3 text-lg font-medium text-slate-300 hover:text-white transition-colors focus:outline-none">
+                    <i class="fa-solid fa-skull mr-2"></i> Nemesis System
+                </button>
+                <button onclick="switchTab('gloom')" id="tab-gloom" class="tab-btn px-6 py-3 text-lg font-medium text-slate-300 hover:text-white transition-colors focus:outline-none">
+                    <i class="fa-solid fa-map mr-2"></i> The Gloom
+                </button>
+            </div>
+
+            <!-- Tab Content: Hybrid Flow -->
+            <div id="content-hybrid" class="tab-content active max-w-4xl mx-auto">
+                <div class="bg-slate-900 rounded-2xl p-8 border border-slate-700 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-4">Action trifft Taktik</h3>
+                        <p class="text-slate-400 mb-4">Wir trennen Reflexe von tiefem Denken, um den Flow zu erhalten.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded bg-red-900/30 text-red-400 flex items-center justify-center mt-1"><i class="fa-solid fa-bolt"></i></div>
+                                <div>
+                                    <strong class="text-white block">Top-Down Action</strong>
+                                    <span class="text-sm text-slate-500">Kämpfe gegen Trash-Mobs mit Reflexen. Mustererkennung statt Rechnen.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded bg-sky-900/30 text-sky-400 flex items-center justify-center mt-1"><i class="fa-solid fa-brain"></i></div>
+                                <div>
+                                    <strong class="text-white block">Taktisches Duell (JRPG)</strong>
+                                    <span class="text-sm text-slate-500">Triffst du einen Wächter, friert die Zeit ein. Löse komplexe Rätsel ohne Stress, um mächtige Zauber zu wirken.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 bg-slate-800 rounded-xl p-6 text-center">
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-700 p-4 rounded border border-slate-600">
+                                <div class="text-xs uppercase text-slate-400 mb-1">Action Mode</div>
+                                <i class="fa-solid fa-person-running text-3xl text-red-400"></i>
+                            </div>
+                            <div class="bg-slate-700 p-4 rounded border border-slate-600">
+                                <div class="text-xs uppercase text-slate-400 mb-1">Duel Mode</div>
+                                <i class="fa-solid fa-chess-knight text-3xl text-sky-400"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500">Automatischer Wechsel basierend auf Gegnertyp</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Nemesis -->
+            <div id="content-nemesis" class="tab-content max-w-4xl mx-auto">
+                <div class="bg-slate-900 rounded-2xl p-8 border border-slate-700 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-4">Dein persönlicher Rivale</h3>
+                        <p class="text-slate-400 mb-4">Hast du eine Schwäche? Das Spiel weiß es. Wir personifizieren dein Lerndefizit.</p>
+                        <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-purple-500 mb-4">
+                            <p class="italic text-slate-300">"Du scheiterst immer noch an quadratischen Funktionen? Ich werde dich in jedem Dungeon jagen!"</p>
+                            <p class="text-right text-xs text-purple-400 font-bold mt-2">- Lord der Parabeln</p>
+                        </div>
+                        <p class="text-slate-400">Besiege deinen Nemesis, um das Thema zu meistern und <strong>legendären Loot</strong> zu erhalten.</p>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                        <div class="w-48 h-64 bg-slate-800 rounded-lg border border-purple-500/50 relative overflow-hidden shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/80"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-center">
+                                <i class="fa-solid fa-dragon text-5xl text-purple-400 mb-2"></i>
+                                <div class="font-bold text-white">Binomischer Brecher</div>
+                                <div class="text-xs text-purple-300">Level 15 Nemesis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Gloom -->
+            <div id="content-gloom" class="tab-content max-w-4xl mx-auto">
+                <div class="bg-slate-900 rounded-2xl p-8 border border-slate-700 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-4">Die Vergessens-Mechanik</h3>
+                        <p class="text-slate-400 mb-4">Wissen zerfällt, wenn man es nicht nutzt. Wir visualisieren das.</p>
+                        <p class="text-slate-400 mb-6">Ein gereinigter Turm bleibt nicht ewig hell. Nach Tagen ohne Besuch kriecht der Nebel zurück. Du musst deine Basis "warten" (Spaced Repetition), um dein Territorium zu verteidigen.</p>
+                        <a href="#roadmap" class="text-sky-400 hover:text-sky-300 font-semibold text-sm">Mehr zur Roadmap <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                    <div class="flex-1 w-full">
+                        <!-- Simple Visual for Gloom Decay -->
+                        <div class="chart-container">
+                             <canvas id="retentionChart"></canvas>
+                        </div>
+                        <p class="text-center text-xs text-slate-500 mt-2">Visualisierung: Raum-Helligkeit über Zeit ohne Training</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Science (Pedagogical Value) -->
+    <section id="science" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-sky-400 font-bold tracking-wider uppercase text-sm">Powered by Mindforge</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Stealth Assessment</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Wir testen dich, ohne dass du es merkst. Das Spiel erstellt ein Kompetenzprofil, das präziser ist als jede Schulnote.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-800 p-8 rounded-xl glow-box border border-slate-700 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-chart-line text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Echtes Können</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Wir messen nicht nur "Richtig/Falsch". Wir messen Reaktionszeit (Latenz). Wer schnell antwortet, hat das Wissen automatisiert. Wer zögert, muss noch üben.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-800 p-8 rounded-xl glow-box border border-slate-700 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-network-wired text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mastery Learning</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Du kommst nicht zum Boss, bevor du die Grundlagen gemeistert hast. Der Dungeon passt sich deinem Skill-Level an, um dich immer im "Flow" zu halten.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-800 p-8 rounded-xl glow-box border border-slate-700 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-user-graduate text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Der Zen-Meister</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Nach einem "Game Over" gibt es keine Note 6, sondern Analyse. Unser KI-Tutor erklärt dir genau, warum du gestorben bist, und bietet ein "Rache-Training" im Dojo an.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap / Early Access -->
+    <section id="roadmap" class="py-20 bg-slate-800 border-t border-slate-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Early Access Roadmap</h2>
+            <div class="space-y-8">
+                <!-- Phase 1 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-4 h-4 bg-green-400 rounded-full shadow-[0_0_10px_#4ade80]"></div>
+                        <div class="w-0.5 h-full bg-slate-600 my-2"></div>
+                    </div>
+                    <div class="pb-8">
+                        <h3 class="text-xl font-bold text-white">Phase 1: Vertical Slice (Verfügbar)</h3>
+                        <p class="text-slate-400 text-sm mt-1">Der Mathe-Turm ist offen. Grundrechenarten, Top-Down Action, JRPG Bosskämpfe und das Room Cleaning System.</p>
+                    </div>
+                </div>
+                <!-- Phase 2 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-4 h-4 bg-sky-500 rounded-full animate-pulse"></div>
+                        <div class="w-0.5 h-full bg-slate-600 my-2"></div>
+                    </div>
+                    <div class="pb-8">
+                        <h3 class="text-xl font-bold text-white">Phase 2: Persistence (In Entwicklung)</h3>
+                        <p class="text-slate-400 text-sm mt-1">Speicherung des Fortschritts, Inventar-System, Loot-Drops und die ersten Gloom-Mechaniken auf der Weltkarte.</p>
+                    </div>
+                </div>
+                <!-- Phase 3 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-4 h-4 bg-slate-600 rounded-full"></div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-500">Phase 3: The Brain (Geplant)</h3>
+                        <p class="text-slate-600 text-sm mt-1">Vollständige KI-Integration, Nemesis-System Generierung und Anbindung an den Mindforge-Core.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="signup" class="py-20 gloom-bg text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Werde ein Architekt der Ordnung</h2>
+            <p class="text-xl text-slate-400 mb-10">
+                Die Plätze für die Closed Beta sind begrenzt. Sichere dir jetzt deinen Zugang und erhalte das exklusive "Gründer-Artefakt".
+            </p>
+            
+            <form onsubmit="event.preventDefault(); alert('Willkommen bei den Wächtern! (Simulation)');" class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input type="email" placeholder="Deine Email Adresse" class="px-6 py-4 rounded-xl bg-slate-800 border border-slate-600 text-white focus:outline-none focus:border-sky-500 w-full" required>
+                <button type="submit" class="px-8 py-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold shadow-lg shadow-sky-600/30 transition-all w-full sm:w-auto whitespace-nowrap">
+                    Join Beta
+                </button>
+            </form>
+            <p class="text-xs text-slate-600 mt-4">Kein Spam. Nur Loot.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-12 border-t border-slate-800 text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-dungeon text-slate-600"></i>
+                <span class="cinzel font-bold text-slate-400">Dungeons & Diplomas</span>
+            </div>
+            <div>
+                &copy; 2024 Mindforge Studios. Ein Indie-Projekt für besseres Lernen.
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Logic for the Room Cleaning Slider
+        const sliderContainer = document.getElementById('room-slider');
+        const orderLayer = document.getElementById('order-layer');
+        const handle = document.getElementById('slider-handle');
+        let isDragging = false;
+
+        // Center handle initially
+        const setSliderPos = (percent) => {
+            handle.style.left = percent + '%';
+            orderLayer.style.clipPath = `polygon(${percent}% 0, 100% 0, 100% 100%, ${percent}% 100%)`;
+        };
+
+        // Mouse/Touch Events
+        sliderContainer.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        sliderContainer.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+
+        const moveHandler = (e) => {
+            if (!isDragging) return;
+            const rect = sliderContainer.getBoundingClientRect();
+            let clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            let percent = ((clientX - rect.left) / rect.width) * 100;
+            
+            // Clamp values
+            percent = Math.max(0, Math.min(100, percent));
+            setSliderPos(percent);
+        };
+
+        window.addEventListener('mousemove', moveHandler);
+        window.addEventListener('touchmove', moveHandler);
+
+        // Initial Animation
+        setTimeout(() => {
+            setSliderPos(40);
+            setTimeout(() => setSliderPos(50), 300);
+        }, 500);
+
+
+        // Logic for Tabs
+        function switchTab(tabId) {
+            // Buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active', 'border-bottom', 'text-sky-400'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.add('text-slate-300'));
+            
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.add('active', 'text-sky-400');
+            activeBtn.classList.remove('text-slate-300');
+
+            // Content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById('content-' + tabId).classList.add('active');
+        }
+
+
+        // Chart.js for Retention Visualization (Gloom Decay)
+        // Wait for DOM and Tab click (to render properly) or render immediately but hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('retentionChart').getContext('2d');
+            
+            // Gradient for the chart
+            let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, 'rgba(56, 189, 248, 0.5)'); // Sky blue
+            gradient.addColorStop(1, 'rgba(15, 23, 42, 0.0)'); // Fade to dark
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Tag 1', 'Tag 3', 'Tag 7', 'Tag 14', 'Tag 30'],
+                    datasets: [{
+                        label: 'Raum-Helligkeit (Wissen)',
+                        data: [100, 95, 70, 40, 10],
+                        borderColor: '#38bdf8',
+                        backgroundColor: gradient,
+                        borderWidth: 3,
+                        pointBackgroundColor: '#ffffff',
+                        pointBorderColor: '#38bdf8',
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleColor: '#e2e8f0',
+                            bodyColor: '#38bdf8',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            displayColors: false,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + '% Integrität';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: '#1e293b' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
