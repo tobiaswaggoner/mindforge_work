@@ -1,5 +1,10 @@
 
 https://gemini.google.com/app/f7fec79ec34a1010
+
+<a href="dungeons_diplomas_science">Das Pädagogische Konzept</a>
+<a href="dungeons_diplomas_landing_page">Das Spiel</a>
+
+
 # Game Design Document (GDD): Dungeons & Diplomas
 
 Projektname: Dungeons & Diplomas (D&D)
