@@ -1,4 +1,4 @@
-# Mindforge Content Generation: Eine System-Bibel
+# 2025-11-22 Mindforge Content Generation: Eine System-Bibel
 
 **Status:** Konzeptphase (Living Document)  
 **Datum:** 22. November 2025  

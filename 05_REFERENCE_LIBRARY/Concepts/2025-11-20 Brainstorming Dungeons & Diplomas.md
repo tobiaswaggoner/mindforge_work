@@ -1,3 +1,4 @@
+# 2025-11-20 Brainstorming Dungeons & Diplomas 
 
 https://gemini.google.com/app/f7fec79ec34a1010
 

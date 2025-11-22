@@ -1,3 +1,5 @@
+# 2025-11-20 Gemini Chat Dungeons & Diplomas 
+
 # You Asked:
 
  guten Morgen, du brandneues Gemini 3 Modell.
