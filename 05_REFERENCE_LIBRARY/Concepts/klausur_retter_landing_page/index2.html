@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLAUSUR.RETTER - Wir retten jede Klausur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rescue: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        },
+                        dark: {
+                            900: '#050810',
+                            800: '#0a0f1a',
+                            700: '#111827',
+                            600: '#1a2234',
+                            500: '#243044',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050810;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Noise Texture Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Animated Gradient Mesh Background */
+        .gradient-mesh {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .gradient-orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .gradient-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(251, 146, 60, 0.1) 0%, transparent 70%);
+            bottom: -150px;
+            left: -100px;
+            animation-delay: -7s;
+        }
+
+        .gradient-orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 70%);
+            top: 50%;
+            left: 30%;
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 30px) scale(1.02); }
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-strong {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Gradient Border */
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(251, 191, 36, 0.05));
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.5), rgba(251, 191, 36, 0.2), transparent, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #f97316 0%, #fbbf24 50%, #f97316 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        /* Premium Glow */
+        .glow-rescue {
+            box-shadow:
+                0 0 20px rgba(249, 115, 22, 0.3),
+                0 0 40px rgba(249, 115, 22, 0.2),
+                0 0 60px rgba(249, 115, 22, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glow-rescue:hover {
+            box-shadow:
+                0 0 30px rgba(249, 115, 22, 0.4),
+                0 0 60px rgba(249, 115, 22, 0.3),
+                0 0 90px rgba(249, 115, 22, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Card Animations */
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(249, 115, 22, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Countdown Animation */
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 1;
+                filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
+            }
+            50% {
+                opacity: 0.8;
+                filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.8));
+            }
+        }
+
+        .countdown-animate {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Elements */
+        .float-slow {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+
+        .float-medium {
+            animation: floatMedium 4s ease-in-out infinite;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        @keyframes floatMedium {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Hero App Mockup */
+        .app-mockup {
+            position: relative;
+            transform: perspective(1200px) rotateY(-2deg) rotateX(2deg);
+            transition: transform 2.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .app-mockup:hover {
+            transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+        }
+
+        /* Button Hover Effect */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Pricing Card Special */
+        .pricing-premium {
+            position: relative;
+        }
+
+        .pricing-premium::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #f97316, #fbbf24, #f97316);
+            border-radius: inherit;
+            z-index: -1;
+            animation: borderRotate 4s linear infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes borderRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.5), transparent);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0f1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #f97316, #fbbf24);
+            border-radius: 4px;
+        }
+
+        /* Ring Animation */
+        .ring-pulse {
+            animation: ringPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+            }
+        }
+
+        /* Nav link underline animation */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #f97316, #fbbf24);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Icon glow on hover */
+        .icon-glow:hover i {
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+    </style>
+</head>
+<body>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-strong">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-18 py-4">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-gradient-to-br from-rescue-500 to-amber-400 rounded-xl flex items-center justify-center ring-pulse">
+                            <i class="fa-solid fa-life-ring text-white"></i>
+                        </div>
+                        <div class="absolute -inset-1 bg-gradient-to-br from-rescue-500/20 to-amber-400/20 rounded-xl blur-md -z-10"></div>
+                    </div>
+                    <span class="brand font-bold text-2xl text-white tracking-tight">KLAUSUR<span class="gradient-text">.RETTER</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-1">
+                        <a href="#problem" class="nav-link text-gray-300 hover:text-rescue-400 px-4 py-2 text-sm font-medium transition-colors">Das Problem</a>
+                        <a href="#solution" class="nav-link text-gray-300 hover:text-rescue-400 px-4 py-2 text-sm font-medium transition-colors">Die Lösung</a>
+                        <a href="#features" class="nav-link text-gray-300 hover:text-rescue-400 px-4 py-2 text-sm font-medium transition-colors">Features</a>
+                        <a href="#pricing" class="nav-link text-gray-300 hover:text-rescue-400 px-4 py-2 text-sm font-medium transition-colors">Preise</a>
+                        <a href="#signup" class="ml-4 btn-primary bg-gradient-to-r from-rescue-600 to-rescue-500 hover:from-rescue-500 hover:to-rescue-400 text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg glow-rescue">Warteliste</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Gradient Mesh Background -->
+        <div class="gradient-mesh">
+            <div class="gradient-orb gradient-orb-1"></div>
+            <div class="gradient-orb gradient-orb-2"></div>
+            <div class="gradient-orb gradient-orb-3"></div>
+        </div>
+
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Text -->
+                <div class="reveal visible">
+                    <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass gradient-border mb-8">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rescue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rescue-500"></span>
+                        </span>
+                        <span class="text-sm font-semibold tracking-wide text-rescue-300">Coming Soon - Februar 2026</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
+                        3 Tage bis zur Klausur?<br/>
+                        <span class="gradient-text">Wir haben den Plan.</span>
+                    </h1>
+
+                    <p class="text-xl md:text-2xl text-slate-400 mb-10 leading-relaxed max-w-xl">
+                        KLAUSUR.RETTER ist die KI-App, die genau weiß, was in <strong class="text-white font-semibold">deinem</strong> Unterricht dran war.
+                        Keine generischen Crashkurse. Sondern <strong class="text-white font-semibold">dein</strong> personalisierter Rettungsplan.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="#signup" class="group btn-primary px-10 py-5 rounded-2xl bg-gradient-to-r from-rescue-600 to-rescue-500 text-white font-bold text-lg shadow-2xl glow-rescue text-center inline-flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-bell group-hover:animate-bounce"></i>
+                            <span>Auf die Warteliste</span>
+                        </a>
+                        <a href="#solution" class="px-10 py-5 rounded-2xl glass gradient-border text-white font-semibold text-lg transition-all hover:bg-white/5 text-center inline-flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-play text-rescue-400"></i>
+                            <span>So funktioniert's</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="flex items-center gap-5">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 border-2 border-dark-900 ring-2 ring-dark-900"></div>
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-slate-500 to-slate-600 border-2 border-dark-900 ring-2 ring-dark-900"></div>
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 border-2 border-dark-900 ring-2 ring-dark-900"></div>
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rescue-600 to-rescue-500 border-2 border-dark-900 ring-2 ring-dark-900 flex items-center justify-center text-sm text-white font-bold">+</div>
+                        </div>
+                        <div class="text-sm text-slate-400">
+                            Bereits <strong class="text-white font-semibold">250+</strong> Schüler auf der Warteliste
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Visual -->
+                <div class="relative float-slow">
+                    <div class="app-mockup relative glass-strong rounded-3xl overflow-hidden shadow-2xl">
+                        <!-- Glow Effect Behind -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-rescue-500/20 via-amber-500/10 to-rescue-500/20 rounded-3xl blur-2xl -z-10"></div>
+
+                        <!-- Mock App Screen -->
+                        <div class="p-8">
+                            <!-- App Header -->
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-gradient-to-br from-rescue-500 to-amber-400 rounded-lg flex items-center justify-center">
+                                        <i class="fa-solid fa-life-ring text-white text-sm"></i>
+                                    </div>
+                                    <span class="font-bold text-white">KLAUSUR.RETTER</span>
+                                </div>
+                                <span class="text-xs text-slate-500 px-3 py-1 rounded-full bg-slate-800/50">Mathe LK</span>
+                            </div>
+
+                            <!-- Countdown -->
+                            <div class="glass gradient-border rounded-2xl p-6 mb-8">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <div class="text-xs text-rescue-400 uppercase tracking-widest font-semibold mb-1">Klausur in</div>
+                                        <div class="text-4xl font-extrabold text-white countdown-animate">3 Tagen</div>
+                                    </div>
+                                    <div class="w-20 h-20 rounded-full border-4 border-rescue-500/50 flex items-center justify-center bg-rescue-500/10">
+                                        <i class="fa-solid fa-clock text-rescue-400 text-3xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Plan Preview -->
+                            <div class="space-y-4">
+                                <div class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Dein Rettungsplan</div>
+
+                                <div class="flex items-center gap-4 p-4 rounded-xl bg-green-500/10 border border-green-500/20 transition-all hover:border-green-500/40">
+                                    <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-check text-green-400"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-white font-semibold">Tag 1: Grundlagen</div>
+                                        <div class="text-xs text-slate-500 truncate">Integrale, Stammfunktionen</div>
+                                    </div>
+                                    <span class="text-sm text-green-400 font-semibold">2h</span>
+                                </div>
+
+                                <div class="flex items-center gap-4 p-4 rounded-xl glass gradient-border transition-all hover:bg-rescue-500/10">
+                                    <div class="w-10 h-10 rounded-full bg-rescue-500/20 flex items-center justify-center flex-shrink-0 ring-pulse">
+                                        <i class="fa-solid fa-play text-rescue-400 text-sm"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-white font-semibold">Tag 2: Vertiefung</div>
+                                        <div class="text-xs text-slate-500 truncate">Substitution, Flächen</div>
+                                    </div>
+                                    <span class="text-sm text-rescue-400 font-semibold">2.5h</span>
+                                </div>
+
+                                <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 opacity-60 transition-all hover:opacity-80">
+                                    <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center flex-shrink-0">
+                                        <span class="text-slate-400 font-bold">3</span>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-white font-semibold">Tag 3: Klausur-Simulation</div>
+                                        <div class="text-xs text-slate-500 truncate">Quick-Check, letzte Lücken</div>
+                                    </div>
+                                    <span class="text-sm text-slate-500 font-semibold">1.5h</span>
+                                </div>
+                            </div>
+
+                            <!-- CTA -->
+                            <button class="w-full mt-8 py-4 bg-gradient-to-r from-rescue-600 to-rescue-500 hover:from-rescue-500 hover:to-rescue-400 text-white font-bold rounded-xl transition-all glow-rescue flex items-center justify-center gap-2">
+                                <span>Plan starten</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute -top-6 -right-4 float-medium">
+                        <div class="relative">
+                            <div class="bg-gradient-to-r from-green-500 to-emerald-400 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-2xl flex items-center gap-2">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>KI-powered</span>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-400 rounded-full blur-lg opacity-50 -z-10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500">
+            <span class="text-xs uppercase tracking-widest">Scroll</span>
+            <div class="w-6 h-10 rounded-full border-2 border-slate-700 flex items-start justify-center p-1">
+                <div class="w-1.5 h-3 bg-rescue-500 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section id="problem" class="relative py-32 section-divider">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Kennst du das?</h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">Der Moment, wenn die Panik kommt.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Problem Card -->
+                <div class="reveal glass rounded-3xl p-10 border border-red-500/20 hover:border-red-500/40 transition-all group">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-face-flushed text-red-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">3 Tage vor der Klausur</h3>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Was kommt überhaupt dran?"</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Wo fang ich an?"</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Ich hab keine Ahnung was ich nicht weiß."</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Schaff ich das noch?"</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 p-5 bg-red-500/10 rounded-xl border border-red-500/20">
+                        <p class="text-red-400 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Ergebnis: Panik. Lähmung. Netflix.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Solution Preview Card -->
+                <div class="reveal glass rounded-3xl p-10 border border-green-500/20 hover:border-green-500/40 transition-all group" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-face-smile text-green-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Mit KLAUSUR.RETTER</h3>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"Die App weiß, was dran war."</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"Hier ist mein Plan. Tag 1, Modul 1."</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"Meine Lücken sind markiert."</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"5,5 Stunden bis ich ready bin."</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 p-5 bg-green-500/10 rounded-xl border border-green-500/20">
+                        <p class="text-green-400 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Ergebnis: Kontrolle. Plan. Klausur gerettet.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Insight -->
+            <div class="mt-24 text-center max-w-4xl mx-auto reveal">
+                <div class="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8">
+                    <i class="fa-solid fa-lightbulb text-rescue-400"></i>
+                    <span class="text-rescue-400 font-bold">Der Kern</span>
+                </div>
+                <p class="text-3xl md:text-4xl text-white font-medium leading-relaxed">
+                    "Panik ist nicht das Problem. <span class="gradient-text">Panik ist das Symptom.</span><br/>
+                    Das eigentliche Problem ist <strong class="text-rescue-400">Kontrollverlust</strong>."
+                </p>
+                <p class="text-xl text-slate-400 mt-8 max-w-2xl mx-auto">
+                    KLAUSUR.RETTER gibt dir die Kontrolle zurück - mit einem klaren Plan, der funktioniert.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="relative py-32 section-divider">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-rescue-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Wie funktioniert's?</h2>
+                <p class="text-xl text-slate-400">Die Kausalkette zum Erfolg</p>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="flex flex-col md:flex-row items-start justify-center gap-4 md:gap-0 mb-24 max-w-6xl mx-auto reveal">
+                <!-- Step 1 -->
+                <div class="flex-1 text-center px-6 group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 glass gradient-border rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                            <span class="text-3xl font-extrabold gradient-text">1</span>
+                        </div>
+                        <div class="absolute -inset-2 bg-rescue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Stoff erfassen</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">10 Sekunden nach jeder Stunde: Was war dran? Text, Foto oder Sprache.</p>
+                </div>
+
+                <!-- Arrow 1 -->
+                <div class="hidden md:flex items-center justify-center pt-8">
+                    <i class="fa-solid fa-chevron-right text-rescue-500/30 text-2xl"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex-1 text-center px-6 group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 glass gradient-border rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                            <span class="text-3xl font-extrabold gradient-text">2</span>
+                        </div>
+                        <div class="absolute -inset-2 bg-rescue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">KI aggregiert</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Die KI kombiniert Einträge von dir und deiner Klasse zu einem vollständigen Bild.</p>
+                </div>
+
+                <!-- Arrow 2 -->
+                <div class="hidden md:flex items-center justify-center pt-8">
+                    <i class="fa-solid fa-chevron-right text-rescue-500/30 text-2xl"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex-1 text-center px-6 group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 glass gradient-border rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                            <span class="text-3xl font-extrabold gradient-text">3</span>
+                        </div>
+                        <div class="absolute -inset-2 bg-rescue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Plan generieren</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Wenn die Klausur ansteht: Ein personalisierter Crash-Kurs mit EUREM Stoff.</p>
+                </div>
+
+                <!-- Arrow 3 -->
+                <div class="hidden md:flex items-center justify-center pt-8">
+                    <i class="fa-solid fa-chevron-right text-rescue-500/30 text-2xl"></i>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex-1 text-center px-6 group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 bg-green-500/10 border-2 border-green-500/50 rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-check text-green-400 text-3xl"></i>
+                        </div>
+                        <div class="absolute -inset-2 bg-green-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Klausur gerettet</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Du weißt was du lernen musst, wie lange es dauert, und wo du anfängst.</p>
+                </div>
+            </div>
+
+            <!-- Key Differentiator -->
+            <div class="glass-strong rounded-3xl p-10 md:p-14 max-w-5xl mx-auto reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold text-white mb-6">Der Unterschied</h3>
+                        <p class="text-slate-400 mb-6 text-lg leading-relaxed">
+                            ChatGPT kann dir "Binomische Formeln" erklären. Aber ChatGPT weiß nicht,
+                            <strong class="text-white">welche Aufgaben euer Lehrer dreimal geübt hat</strong>.
+                        </p>
+                        <p class="text-slate-400 text-lg leading-relaxed">
+                            KLAUSUR.RETTER weiß es - weil die App <strong class="text-white">im Unterricht "dabei" war</strong>.
+                        </p>
+                    </div>
+                    <div class="glass rounded-2xl p-8">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 opacity-60">
+                                <div class="w-12 h-12 rounded-xl bg-slate-700 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-robot text-slate-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-slate-500 mb-1">ChatGPT</div>
+                                    <div class="text-white">"Hier ist alles über Integrale"</div>
+                                </div>
+                            </div>
+                            <div class="border-t border-slate-700"></div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-rescue-500/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-life-ring text-rescue-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-rescue-400 mb-1">KLAUSUR.RETTER</div>
+                                    <div class="text-white font-semibold">"Fokus auf Substitution - das kam 3x dran"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="relative py-32 section-divider">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Features</h2>
+                <p class="text-xl text-slate-400">Alles was du brauchst, um jede Klausur zu retten</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="feature-card glass rounded-2xl p-8 border border-slate-800 reveal">
+                    <div class="w-14 h-14 bg-rescue-500/10 rounded-2xl flex items-center justify-center mb-6 icon-glow transition-all">
+                        <i class="fa-solid fa-camera text-rescue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Foto-Erfassung</h3>
+                    <p class="text-slate-400 leading-relaxed">Fotografiere Tafelbilder, Arbeitsblätter oder Hefteinträge. Die KI erkennt den Inhalt.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card glass rounded-2xl p-8 border border-slate-800 reveal" style="animation-delay: 0.05s;">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 icon-glow transition-all">
+                        <i class="fa-solid fa-users text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Klassenverband</h3>
+                    <p class="text-slate-400 leading-relaxed">Nicht jeder muss alles eintragen. 3-5 Leute reichen - die KI kombiniert alles.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card glass rounded-2xl p-8 border border-slate-800 reveal" style="animation-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 icon-glow transition-all">
+                        <i class="fa-solid fa-wand-magic-sparkles text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">5-Wege-Erklärer</h3>
+                    <p class="text-slate-400 leading-relaxed">Nicht verstanden? Wähle: "Wie ein Freund", "Mit Beispiel", "Als Analogie" und mehr.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card glass rounded-2xl p-8 border border-slate-800 reveal" style="animation-delay: 0.15s;">
+                    <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center mb-6 icon-glow transition-all">
+                        <i class="fa-solid fa-clock text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Deadline-Optimiert</h3>
+                    <p class="text-slate-400 leading-relaxed">3 Wochen? Entspannter Plan. 3 Tage? Intensiv. 3 Stunden? Notfall-Modus.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card glass rounded-2xl p-8 border border-slate-800 reveal" style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 icon-glow transition-all">
+                        <i class="fa-solid fa-fire text-amber-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Streak-System</h3>
+                    <p class="text-slate-400 leading-relaxed">Täglich eintragen = bessere Crash-Kurse. Mit Streak-Freezes, falls du mal vergisst.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card glass rounded-2xl p-8 border border-slate-800 reveal" style="animation-delay: 0.25s;">
+                    <div class="w-14 h-14 bg-pink-500/10 rounded-2xl flex items-center justify-center mb-6 icon-glow transition-all">
+                        <i class="fa-solid fa-share-nodes text-pink-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Panik-Squad</h3>
+                    <p class="text-slate-400 leading-relaxed">Klausur-Panik? Lade Freunde ein. Gemeinsam lernen, gegenseitig motivieren.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="relative py-32 section-divider">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Preise</h2>
+                <p class="text-xl text-slate-400">Günstiger als eine halbe Stunde Nachhilfe</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free Tier -->
+                <div class="glass rounded-3xl p-10 border border-slate-800 hover:border-slate-700 transition-all reveal">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Free</h3>
+                        <div class="text-5xl font-extrabold text-white mb-1">0€</div>
+                        <div class="text-sm text-slate-500">für immer</div>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>30 AI-Anfragen/Monat</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Basis-Features</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Stoff-Erfassung</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>5-Wege-Erklärer</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all">
+                        Kostenlos starten
+                    </button>
+                </div>
+
+                <!-- Klausur-Pass -->
+                <div class="glass rounded-3xl p-10 border border-slate-800 hover:border-slate-700 transition-all reveal" style="animation-delay: 0.1s;">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Klausur-Pass</h3>
+                        <div class="text-5xl font-extrabold text-white mb-1">7€</div>
+                        <div class="text-sm text-slate-500">einmalig / 7 Tage</div>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Unlimited AI für 7 Tage</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Alle Features</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>5-Wege-Erklärer</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Perfekt für eine Klausur</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all">
+                        Pass kaufen
+                    </button>
+                </div>
+
+                <!-- Premium -->
+                <div class="pricing-premium rounded-3xl p-10 glass-strong relative reveal" style="animation-delay: 0.2s;">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-gradient-to-r from-rescue-600 to-rescue-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                            BELIEBT
+                        </div>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Premium</h3>
+                        <div class="text-5xl font-extrabold text-slate-900 mb-1">15€</div>
+                        <div class="text-sm text-slate-700">pro Monat</div>
+                        <div class="text-xs text-slate-800 mt-2 font-semibold">oder 119€/Jahr (spar 61€)</div>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-slate-800">
+                            <i class="fa-solid fa-check text-slate-900"></i>
+                            <span><strong>Unlimited</strong> AI-Anfragen</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-800">
+                            <i class="fa-solid fa-check text-slate-900"></i>
+                            <span>Alle Features</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-800">
+                            <i class="fa-solid fa-check text-slate-900"></i>
+                            <span>5-Wege-Erklärer</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-800">
+                            <i class="fa-solid fa-check text-slate-900"></i>
+                            <span>Unbegrenzte Klausuren</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-800">
+                            <i class="fa-solid fa-check text-slate-900"></i>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 bg-gradient-to-r from-rescue-600 to-rescue-500 hover:from-rescue-500 hover:to-rescue-400 text-white font-bold rounded-xl transition-all glow-rescue">
+                        Premium werden
+                    </button>
+                </div>
+            </div>
+
+            <!-- Comparison -->
+            <div class="mt-16 text-center max-w-3xl mx-auto reveal">
+                <div class="glass rounded-2xl p-8 border border-slate-800">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <div class="text-slate-500 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Nachhilfe: <span class="line-through">30-50€/Stunde</span></span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-rescue-500 hidden sm:block"></i>
+                        <div class="text-rescue-400 font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-life-ring"></i>
+                            <span>KLAUSUR.RETTER: 15€/Monat für alle Fächer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="signup" class="relative py-32 section-divider overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+
+        <!-- Decorative Gradient Orbs -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rescue-500/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-3xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 px-5 py-2.5 glass gradient-border rounded-full mb-8 reveal">
+                <i class="fa-solid fa-rocket text-rescue-400"></i>
+                <span class="text-sm font-semibold text-rescue-300">Launch: Februar 2026</span>
+            </div>
+
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-8 reveal">
+                Bereit für die<br/><span class="gradient-text">Rettung?</span>
+            </h2>
+
+            <p class="text-xl text-slate-400 mb-12 reveal max-w-xl mx-auto">
+                Trag dich auf die Warteliste ein und erhalte <strong class="text-white">Early Access</strong> +
+                <strong class="text-rescue-400">50% Rabatt</strong> auf das erste Jahr.
+            </p>
+
+            <form id="signup-form" onsubmit="event.preventDefault(); document.getElementById('success-message').classList.remove('hidden'); this.classList.add('hidden');" class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto reveal">
+                <input type="email" placeholder="Deine Email Adresse" class="flex-1 px-6 py-5 rounded-xl glass border border-slate-700 text-white focus:outline-none focus:border-rescue-500 focus:ring-2 focus:ring-rescue-500/20 placeholder-slate-500 transition-all" required>
+                <button type="submit" class="btn-primary px-8 py-5 rounded-xl bg-gradient-to-r from-rescue-600 to-rescue-500 hover:from-rescue-500 hover:to-rescue-400 text-white font-bold shadow-lg glow-rescue whitespace-nowrap flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notify me</span>
+                </button>
+            </form>
+
+            <div id="success-message" class="hidden mt-8 p-6 glass rounded-2xl border border-green-500/30">
+                <p class="text-green-400 font-medium flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-check-circle text-xl"></i>
+                    <span>Du bist auf der Liste! Wir melden uns zum Launch.</span>
+                </p>
+            </div>
+
+            <p class="text-xs text-slate-600 mt-6 reveal">Kein Spam. Nur Launch-Info.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-dark-900 py-16 border-t border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-rescue-500 to-amber-400 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-life-ring text-white"></i>
+                    </div>
+                    <span class="brand font-bold text-xl text-white">KLAUSUR<span class="gradient-text">.RETTER</span></span>
+                </div>
+
+                <div class="text-sm text-slate-500 flex items-center gap-1">
+                    &copy; 2026 Mindforge. Made with <i class="fa-solid fa-heart text-rescue-500 mx-1"></i> in Thüringen.
+                </div>
+
+                <div class="flex gap-5">
+                    <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-center gap-8 text-sm text-slate-500">
+                <a href="#" class="hover:text-white transition-colors">Impressum</a>
+                <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
+                <a href="#" class="hover:text-white transition-colors">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth parallax effect for gradient orbs
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.gradient-orb');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            orbs.forEach((orb, index) => {
+                const speed = (index + 1) * 10;
+                const xOffset = (x - 0.5) * speed;
+                const yOffset = (y - 0.5) * speed;
+                orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

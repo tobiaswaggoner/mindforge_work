@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLAUSUR.RETTER - Wir retten jede Klausur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rescue: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        h1, h2, h3, .brand {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Glow Effects */
+        .glow-rescue {
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+        }
+        .glow-rescue:hover {
+            box-shadow: 0 0 50px rgba(249, 115, 22, 0.5);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #f97316, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse-rescue {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-rescue {
+            animation: pulse-rescue 2s ease-in-out infinite;
+        }
+
+        /* Timeline */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #f97316, #fbbf24);
+        }
+
+        /* Card Hover */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #f97316;
+        }
+
+        /* Countdown Animation */
+        @keyframes countdown {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .countdown-animate {
+            animation: countdown 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-rescue-500 to-amber-400 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-life-ring text-white text-sm"></i>
+                    </div>
+                    <span class="brand font-bold text-xl text-white tracking-tight">KLAUSUR<span class="text-rescue-500">.RETTER</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#problem" class="text-gray-300 hover:text-rescue-400 px-3 py-2 text-sm font-medium transition-colors">Das Problem</a>
+                        <a href="#solution" class="text-gray-300 hover:text-rescue-400 px-3 py-2 text-sm font-medium transition-colors">Die Lösung</a>
+                        <a href="#features" class="text-gray-300 hover:text-rescue-400 px-3 py-2 text-sm font-medium transition-colors">Features</a>
+                        <a href="#pricing" class="text-gray-300 hover:text-rescue-400 px-3 py-2 text-sm font-medium transition-colors">Preise</a>
+                        <a href="#signup" class="bg-rescue-600 hover:bg-rescue-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg transition-all">Warteliste</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800"></div>
+        <div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%231e293b&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rescue-500/10 border border-rescue-500/30 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-rescue-500 animate-pulse"></span>
+                        <span class="text-xs font-semibold tracking-wide uppercase text-rescue-400">Coming Soon - Februar 2026</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        3 Tage bis zur Klausur?<br/>
+                        <span class="gradient-text">Wir haben den Plan.</span>
+                    </h1>
+
+                    <p class="text-xl text-slate-400 mb-8 leading-relaxed">
+                        KLAUSUR.RETTER ist die KI-App, die genau weiß, was in <strong class="text-white">deinem</strong> Unterricht dran war.
+                        Keine generischen Crashkurse. Sondern <strong class="text-white">dein</strong> personalisierter Rettungsplan.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#signup" class="px-8 py-4 rounded-xl bg-rescue-600 hover:bg-rescue-500 text-white font-bold text-lg shadow-xl glow-rescue transition-all transform hover:scale-105 text-center">
+                            <i class="fa-solid fa-bell mr-2"></i> Auf die Warteliste
+                        </a>
+                        <a href="#solution" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-lg border border-slate-700 transition-all text-center">
+                            <i class="fa-solid fa-play mr-2"></i> So funktioniert's
+                        </a>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="mt-10 flex items-center gap-4 text-sm text-slate-500">
+                        <div class="flex -space-x-2">
+                            <!-- Placeholder Avatars -->
+                            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-900"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-slate-900"></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-900"></div>
+                            <div class="w-8 h-8 rounded-full bg-rescue-600 border-2 border-slate-900 flex items-center justify-center text-xs text-white font-bold">+</div>
+                        </div>
+                        <span>Bereits <strong class="text-white">250+</strong> Schüler auf der Warteliste</span>
+                    </div>
+                </div>
+
+                <!-- Right: Visual -->
+                <div class="relative">
+                    <!-- Placeholder for Hero Image -->
+                    <div class="relative bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-2xl">
+                        <!-- Mock App Screen -->
+                        <div class="p-6">
+                            <!-- App Header -->
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 bg-rescue-500 rounded flex items-center justify-center">
+                                        <i class="fa-solid fa-life-ring text-white text-xs"></i>
+                                    </div>
+                                    <span class="font-bold text-white text-sm">KLAUSUR.RETTER</span>
+                                </div>
+                                <span class="text-xs text-slate-500">Mathe LK</span>
+                            </div>
+
+                            <!-- Countdown -->
+                            <div class="bg-rescue-500/10 border border-rescue-500/30 rounded-xl p-4 mb-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <div class="text-xs text-rescue-400 uppercase tracking-wide">Klausur in</div>
+                                        <div class="text-3xl font-bold text-white countdown-animate">3 Tagen</div>
+                                    </div>
+                                    <div class="w-16 h-16 rounded-full border-4 border-rescue-500 flex items-center justify-center">
+                                        <i class="fa-solid fa-clock text-rescue-400 text-2xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Plan Preview -->
+                            <div class="space-y-3">
+                                <div class="text-xs text-slate-500 uppercase tracking-wide mb-2">Dein Rettungsplan</div>
+                                <div class="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg">
+                                    <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                                        <i class="fa-solid fa-check text-green-400 text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="text-sm text-white font-medium">Tag 1: Grundlagen</div>
+                                        <div class="text-xs text-slate-500">Integrale, Stammfunktionen</div>
+                                    </div>
+                                    <span class="text-xs text-green-400">2h</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-rescue-500/10 border border-rescue-500/30 rounded-lg">
+                                    <div class="w-8 h-8 rounded-full bg-rescue-500/20 flex items-center justify-center">
+                                        <i class="fa-solid fa-play text-rescue-400 text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="text-sm text-white font-medium">Tag 2: Vertiefung</div>
+                                        <div class="text-xs text-slate-500">Substitution, Flächen</div>
+                                    </div>
+                                    <span class="text-xs text-rescue-400">2.5h</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg opacity-60">
+                                    <div class="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center">
+                                        <span class="text-slate-400 text-sm font-bold">3</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="text-sm text-white font-medium">Tag 3: Klausur-Simulation</div>
+                                        <div class="text-xs text-slate-500">Quick-Check, letzte Lücken</div>
+                                    </div>
+                                    <span class="text-xs text-slate-500">1.5h</span>
+                                </div>
+                            </div>
+
+                            <!-- CTA -->
+                            <button class="w-full mt-6 py-3 bg-rescue-600 hover:bg-rescue-500 text-white font-bold rounded-xl transition-all">
+                                Plan starten <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                        <i class="fa-solid fa-bolt mr-1"></i> KI-powered
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-20 bg-slate-800 border-y border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Kennst du das?</h2>
+                <p class="text-xl text-slate-400">Der Moment, wenn die Panik kommt.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Problem Card -->
+                <div class="bg-slate-900 rounded-2xl p-8 border border-red-500/20">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-face-flushed text-red-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">3 Tage vor der Klausur</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Was kommt überhaupt dran?"</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Wo fang ich an?"</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Ich hab keine Ahnung was ich nicht weiß."</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Schaff ich das noch?"</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                        <p class="text-red-400 text-sm font-medium">
+                            <i class="fa-solid fa-arrow-right mr-2"></i>
+                            Ergebnis: Panik. Lähmung. Netflix.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Solution Preview Card -->
+                <div class="bg-slate-900 rounded-2xl p-8 border border-green-500/20">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-face-smile text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Mit KLAUSUR.RETTER</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"Die App weiß, was dran war."</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"Hier ist mein Plan. Tag 1, Modul 1."</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"Meine Lücken sind markiert."</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span>"5,5 Stunden bis ich ready bin."</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-green-500/10 rounded-lg border border-green-500/20">
+                        <p class="text-green-400 text-sm font-medium">
+                            <i class="fa-solid fa-arrow-right mr-2"></i>
+                            Ergebnis: Kontrolle. Plan. Klausur gerettet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Insight -->
+            <div class="mt-16 text-center max-w-3xl mx-auto">
+                <div class="inline-block px-6 py-3 bg-slate-700 rounded-full mb-6">
+                    <span class="text-rescue-400 font-bold"><i class="fa-solid fa-lightbulb mr-2"></i>Der Kern</span>
+                </div>
+                <p class="text-2xl text-white font-medium leading-relaxed">
+                    "Panik ist nicht das Problem. <span class="gradient-text">Panik ist das Symptom.</span><br/>
+                    Das eigentliche Problem ist <strong>Kontrollverlust</strong>."
+                </p>
+                <p class="text-lg text-slate-400 mt-4">
+                    KLAUSUR.RETTER gibt dir die Kontrolle zurück - mit einem klaren Plan, der funktioniert.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Wie funktioniert's?</h2>
+                <p class="text-xl text-slate-400">Die Kausalkette zum Erfolg</p>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="flex flex-col md:flex-row items-start justify-center gap-4 md:gap-0 mb-16 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="flex-1 text-center px-4">
+                    <div class="w-16 h-16 bg-rescue-500/10 border-2 border-rescue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-rescue-400">1</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Stoff erfassen</h3>
+                    <p class="text-sm text-slate-400">10 Sekunden nach jeder Stunde: Was war dran? Text, Foto oder Sprache.</p>
+                </div>
+
+                <!-- Arrow 1 -->
+                <div class="hidden md:flex items-center justify-center pt-6">
+                    <i class="fa-solid fa-chevron-right text-rescue-500/50 text-xl"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex-1 text-center px-4">
+                    <div class="w-16 h-16 bg-rescue-500/10 border-2 border-rescue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-rescue-400">2</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">KI aggregiert</h3>
+                    <p class="text-sm text-slate-400">Die KI kombiniert Einträge von dir und deiner Klasse zu einem vollständigen Bild.</p>
+                </div>
+
+                <!-- Arrow 2 -->
+                <div class="hidden md:flex items-center justify-center pt-6">
+                    <i class="fa-solid fa-chevron-right text-rescue-500/50 text-xl"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex-1 text-center px-4">
+                    <div class="w-16 h-16 bg-rescue-500/10 border-2 border-rescue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-rescue-400">3</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Plan generieren</h3>
+                    <p class="text-sm text-slate-400">Wenn die Klausur ansteht: Ein personalisierter Crash-Kurs mit EUREM Stoff.</p>
+                </div>
+
+                <!-- Arrow 3 -->
+                <div class="hidden md:flex items-center justify-center pt-6">
+                    <i class="fa-solid fa-chevron-right text-rescue-500/50 text-xl"></i>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex-1 text-center px-4">
+                    <div class="w-16 h-16 bg-green-500/10 border-2 border-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-check text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Klausur gerettet</h3>
+                    <p class="text-sm text-slate-400">Du weißt was du lernen musst, wie lange es dauert, und wo du anfängst.</p>
+                </div>
+            </div>
+
+            <!-- Key Differentiator -->
+            <div class="bg-slate-800 rounded-2xl p-8 md:p-12 border border-slate-700 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Der Unterschied</h3>
+                        <p class="text-slate-400 mb-6">
+                            ChatGPT kann dir "Binomische Formeln" erklären. Aber ChatGPT weiß nicht,
+                            <strong class="text-white">welche Aufgaben euer Lehrer dreimal geübt hat</strong>.
+                        </p>
+                        <p class="text-slate-400">
+                            KLAUSUR.RETTER weiß es - weil die App <strong class="text-white">im Unterricht "dabei" war</strong>.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-xl p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center">
+                                    <i class="fa-solid fa-robot text-slate-500"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-slate-500">ChatGPT</div>
+                                    <div class="text-white">"Hier ist alles über Integrale"</div>
+                                </div>
+                            </div>
+                            <div class="border-t border-slate-700"></div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded bg-rescue-500/20 flex items-center justify-center">
+                                    <i class="fa-solid fa-life-ring text-rescue-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-rescue-400">KLAUSUR.RETTER</div>
+                                    <div class="text-white">"Fokus auf Substitution - das kam 3x dran"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-slate-800 border-y border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Features</h2>
+                <p class="text-xl text-slate-400">Alles was du brauchst, um jede Klausur zu retten</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-slate-900 rounded-xl p-6 border border-slate-700">
+                    <div class="w-12 h-12 bg-rescue-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-camera text-rescue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Foto-Erfassung</h3>
+                    <p class="text-sm text-slate-400">Fotografiere Tafelbilder, Arbeitsblätter oder Hefteinträge. Die KI erkennt den Inhalt.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-slate-900 rounded-xl p-6 border border-slate-700">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-users text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Klassenverband</h3>
+                    <p class="text-sm text-slate-400">Nicht jeder muss alles eintragen. 3-5 Leute reichen - die KI kombiniert alles.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-slate-900 rounded-xl p-6 border border-slate-700">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-wand-magic-sparkles text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">5-Wege-Erklärer</h3>
+                    <p class="text-sm text-slate-400">Nicht verstanden? Wähle: "Wie ein Freund", "Mit Beispiel", "Als Analogie" und mehr.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-slate-900 rounded-xl p-6 border border-slate-700">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-clock text-green-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Deadline-Optimiert</h3>
+                    <p class="text-sm text-slate-400">3 Wochen? Entspannter Plan. 3 Tage? Intensiv. 3 Stunden? Notfall-Modus.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-slate-900 rounded-xl p-6 border border-slate-700">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-fire text-amber-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Streak-System</h3>
+                    <p class="text-sm text-slate-400">Täglich eintragen = bessere Crash-Kurse. Mit Streak-Freezes, falls du mal vergisst.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-slate-900 rounded-xl p-6 border border-slate-700">
+                    <div class="w-12 h-12 bg-pink-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-share-nodes text-pink-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Panik-Squad</h3>
+                    <p class="text-sm text-slate-400">Klausur-Panik? Lade Freunde ein. Gemeinsam lernen, gegenseitig motivieren.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Preise</h2>
+                <p class="text-xl text-slate-400">Günstiger als eine halbe Stunde Nachhilfe</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Free Tier -->
+                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Free</h3>
+                        <div class="text-4xl font-bold text-white">0€</div>
+                        <div class="text-sm text-slate-500">für immer</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>30 AI-Anfragen/Monat</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Basis-Features</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Stoff-Erfassung</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-500">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>5-Wege-Erklärer</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl transition-all">
+                        Kostenlos starten
+                    </button>
+                </div>
+
+                <!-- Klausur-Pass -->
+                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Klausur-Pass</h3>
+                        <div class="text-4xl font-bold text-white">7€</div>
+                        <div class="text-sm text-slate-500">einmalig / 7 Tage</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Unlimited AI für 7 Tage</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Alle Features</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>5-Wege-Erklärer</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-check text-green-400"></i>
+                            <span>Perfekt für eine Klausur</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl transition-all">
+                        Pass kaufen
+                    </button>
+                </div>
+
+                <!-- Premium -->
+                <div class="bg-gradient-to-b from-rescue-500/10 to-slate-800 rounded-2xl p-8 border-2 border-rescue-500 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-rescue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        BELIEBT
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Premium</h3>
+                        <div class="text-4xl font-bold text-white">15€</div>
+                        <div class="text-sm text-slate-500">pro Monat</div>
+                        <div class="text-xs text-rescue-400 mt-1">oder 119€/Jahr (spar 61€)</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-slate-300">
+                            <i class="fa-solid fa-check text-rescue-400"></i>
+                            <span><strong>Unlimited</strong> AI-Anfragen</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-300">
+                            <i class="fa-solid fa-check text-rescue-400"></i>
+                            <span>Alle Features</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-300">
+                            <i class="fa-solid fa-check text-rescue-400"></i>
+                            <span>5-Wege-Erklärer</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-300">
+                            <i class="fa-solid fa-check text-rescue-400"></i>
+                            <span>Unbegrenzte Klausuren</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-300">
+                            <i class="fa-solid fa-check text-rescue-400"></i>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-rescue-600 hover:bg-rescue-500 text-white font-bold rounded-xl transition-all glow-rescue">
+                        Premium werden
+                    </button>
+                </div>
+            </div>
+
+            <!-- Comparison -->
+            <div class="mt-12 text-center max-w-2xl mx-auto">
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                    <div class="flex items-center justify-center gap-4 text-sm">
+                        <div class="text-slate-500">
+                            <i class="fa-solid fa-graduation-cap mr-2"></i>
+                            Nachhilfe: <span class="line-through">30-50€/Stunde</span>
+                        </div>
+                        <div class="text-rescue-400 font-bold">
+                            <i class="fa-solid fa-arrow-right mr-2"></i>
+                            KLAUSUR.RETTER: 15€/Monat für alle Fächer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="signup" class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rescue-500/10 border border-rescue-500/30 mb-6">
+                <i class="fa-solid fa-rocket text-rescue-400"></i>
+                <span class="text-sm font-semibold text-rescue-400">Launch: Februar 2026</span>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Bereit für die<br/><span class="gradient-text">Rettung?</span>
+            </h2>
+
+            <p class="text-xl text-slate-400 mb-10">
+                Trag dich auf die Warteliste ein und erhalte <strong class="text-white">Early Access</strong> +
+                <strong class="text-rescue-400">50% Rabatt</strong> auf das erste Jahr.
+            </p>
+
+            <form onsubmit="event.preventDefault(); document.getElementById('success-message').classList.remove('hidden'); this.classList.add('hidden');" class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input type="email" placeholder="Deine Email Adresse" class="px-6 py-4 rounded-xl bg-slate-800 border border-slate-600 text-white focus:outline-none focus:border-rescue-500 w-full placeholder-slate-500" required>
+                <button type="submit" class="px-8 py-4 rounded-xl bg-rescue-600 hover:bg-rescue-500 text-white font-bold shadow-lg glow-rescue transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-bell mr-2"></i> Notify me
+                </button>
+            </form>
+
+            <div id="success-message" class="hidden mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl">
+                <p class="text-green-400 font-medium">
+                    <i class="fa-solid fa-check-circle mr-2"></i>
+                    Du bist auf der Liste! Wir melden uns zum Launch.
+                </p>
+            </div>
+
+            <p class="text-xs text-slate-600 mt-4">Kein Spam. Nur Launch-Info.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-rescue-500 to-amber-400 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-life-ring text-white text-sm"></i>
+                    </div>
+                    <span class="brand font-bold text-white">KLAUSUR<span class="text-rescue-500">.RETTER</span></span>
+                </div>
+
+                <div class="text-sm text-slate-500">
+                    &copy; 2026 Mindforge. Made with <i class="fa-solid fa-heart text-rescue-500"></i> in Thüringen.
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-center gap-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-white transition-colors">Impressum</a>
+                <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
+                <a href="#" class="hover:text-white transition-colors">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
