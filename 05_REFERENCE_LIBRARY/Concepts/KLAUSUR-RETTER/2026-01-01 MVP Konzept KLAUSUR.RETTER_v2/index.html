@@ -1,0 +1,4652 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI-Native Project Hub für Mind Forge - Die Schmiede des Geistes">
+      
+      
+        <meta name="author" content="Tobias Waggoner (Netzalist GmbH & Co. KG)">
+      
+      
+      
+        <link rel="prev" href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v2.1/">
+      
+      
+        <link rel="next" href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>MVP-Konzept: KLAUSUR.RETTER v2 - Mind Forge</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mvp-konzept-klausurretter-v2" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../../.." title="Mind Forge" class="md-header__button md-logo" aria-label="Mind Forge" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mind Forge
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MVP-Konzept: KLAUSUR.RETTER v2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tobiaswaggoner/mindforge_work" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mind Forge
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Hauptnavigation" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Willkommen bei Mind Forge!
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../CLAUDE/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Arbeiten im Mind Forge Repository
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../02_SPARK_CHAMBER/2025-10-29-Multi-Channel-AI-Tutor-with-Memory/" class="md-tabs__link">
+          
+  
+  
+  02 SPARK CHAMBER
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-01-Quiz-Generator-MVP/" class="md-tabs__link">
+          
+  
+  
+  03 THE FORGE
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../04_FORGE_LOG/2025-10-29/" class="md-tabs__link">
+          
+  
+  
+  04 FORGE LOG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../2025-11-20%20Brainstorming%20Dungeons%20%26%20Diplomas/" class="md-tabs__link">
+          
+  
+  
+  05 REFERENCE LIBRARY
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Mind Forge" class="md-nav__button md-logo" aria-label="Mind Forge" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Mind Forge
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tobiaswaggoner/mindforge_work" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mind Forge
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen bei Mind Forge!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CLAUDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arbeiten im Mind Forge Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 SPARK CHAMBER
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 SPARK CHAMBER
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-10-29-Multi-Channel-AI-Tutor-with-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Channel AI-Tutor with Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-11-12-AI-Adaptive-Quiz-Generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-Adaptive Quiz Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-11-12-Educational-Dungeon-Crawler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Educational Dungeon Crawler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-11-20-Fallen-Nach-R%C3%A4umung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallen &amp; Dekoration nach Dungeon-Räumung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 THE FORGE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 THE FORGE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Stock
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 Stock
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-01-Quiz-Generator-MVP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz-Generator-MVP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-02-XP-und-Levels-Basis-Gamification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XP &amp; Levels (Basis-Gamification)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-03-Remediation-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation-System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-04-Adaptive-Self-Assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Self-Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-05-Quiz-Persistence-und-Sharing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz-Persistence &amp; Sharing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-06-Achievements-und-Streaks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Achievements &amp; Streaks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 FORGE LOG
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 FORGE LOG
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../04_FORGE_LOG/2025-10-29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log vom 2025-10-29
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 REFERENCE LIBRARY
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05 REFERENCE LIBRARY
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-20%20Brainstorming%20Dungeons%20%26%20Diplomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-20 Brainstorming Dungeons &amp; Diplomas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-20%20Gemini%20Chat%20Dungeons%20%26%20Diplomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-20 Gemini Chat Dungeons &amp; Diplomas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Brainstorming%20Mindforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-22 Brainstorming Mindforge (Gemini Chat)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Finanzierung%20und%20Monetarisierung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finanzierung und Monetarisierungsstrategie für „Dungeons &amp; Diplomas“ – Bootstrapping-Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Lernkonzept-Ausbau_%20Motivation%20und%20Wissensaufbau/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-22 Mindforge / Dungeons and Diplomas: Eine strategische Analyse zur Konvergenz ludisch-pädagogischer Architekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Mindforge%20Content%20Ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-22 Mindforge Content Generation: Eine System-Bibel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2026-01-01%20Marketing%20Strategie%20Mindforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing Strategie Mindforge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2026-01-01%20Mindforge%20Flywheel%20Strategie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mindforge Flywheel Strategie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Knowledge%20Space%20Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Space Theory &amp; Automatisierte Content-Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_10" id="__nav_6_1_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR RETTER
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KLAUSUR RETTER
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20Feedback%20Kinder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 01 01 Feedback Kinder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Brainstorming%20Synthese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP Brainstorming: Synthese aller Erkenntnisse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_Pitch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR.RETTER - Pitch v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP-Konzept: KLAUSUR.RETTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR.RETTER v2: Kontext-Edition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP-Konzept: KLAUSUR.RETTER v2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP-Konzept: KLAUSUR.RETTER v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-ist-neu-in-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was ist neu in v2?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-drei-saeulen-von-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die drei Saeulen von v2:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kern-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kern-Insight:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-das-was-war-dran-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Das "Was war dran?"-Problem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Das &#34;Was war dran?&#34;-Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-realitaet-in-deutschen-klassenzimmern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Realitaet in deutschen Klassenzimmern:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warum-das-ein-fundamentales-problem-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warum das ein fundamentales Problem ist:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-kontext-vorteil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Kontext-Vorteil:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-compound-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Compound Effect:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-neue-features-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Neue Features v2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Neue Features v2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-stundenplan-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Stundenplan-Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-kollaborative-stoff-erfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Kollaborative Stoff-Erfassung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-frag-die-klasse-mechanik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 "Frag die Klasse"-Mechanik
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-unterrichts-historie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Unterrichts-Historie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-angepasste-user-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Angepasste User Journey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Angepasste User Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v1-journey-zur-erinnerung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1 Journey (zur Erinnerung):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v2-journey-erweitert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2 Journey (erweitert):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-vergleich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey-Vergleich:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-kst-pfad-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. KST-Pfad Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. KST-Pfad Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-ist-der-kst-pfad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was ist der KST-Pfad?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-lernt-die-ki-ueber-den-schueler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was lernt die KI ueber den Schueler?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#welche-daten-sammeln-wir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Welche Daten sammeln wir?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datenmodell-fuer-kst-vorbereitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datenmodell fuer KST-Vorbereitung:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wie-bereitet-das-den-kst-graphen-vor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wie bereitet das den KST-Graphen vor?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sofortiger-nutzen-ohne-vollstaendigen-kst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sofortiger Nutzen (ohne vollstaendigen KST):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-klassenverband-lite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Klassenverband-Lite
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Klassenverband-Lite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-es-nicht-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was es NICHT ist:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-es-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was es IST:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-klassenverband-als-datenpool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Klassenverband als Datenpool:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anonymitaets-optionen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anonymitaets-Optionen:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cold-start-loesung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cold-Start-Loesung:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-technische-erweiterungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Technische Erweiterungen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Technische Erweiterungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-erweitertes-datenmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Erweitertes Datenmodell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-push-notification-strategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Push-Notification-Strategie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-api-erweiterungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 API-Erweiterungen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-risiken-mitigationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Risiken &amp; Mitigationen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Risiken &amp; Mitigationen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-was-wenn-niemand-antwortet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Was wenn niemand antwortet?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-qualitaet-der-schueler-eingaben" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Qualitaet der Schueler-Eingaben
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-privacy-im-klassenverband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Privacy im Klassenverband
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-technische-risiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Technische Risiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-adoption-risiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Adoption-Risiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-mvp-scope-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. MVP-Scope v2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. MVP-Scope v2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-phase-1-sprint-1-2-core-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Phase 1: Sprint 1-2 (Core v2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-phase-2-sprint-3-4-klassenverband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Phase 2: Sprint 3-4 (Klassenverband)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-phase-3-sprint-5-6-kst-basis-polish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Phase 3: Sprint 5-6 (KST-Basis + Polish)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-timeline-uebersicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Timeline-Uebersicht
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-erfolgsmetriken-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Erfolgsmetriken v2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-zusammenfassung-v1-vs-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Zusammenfassung: v1 vs v2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Zusammenfassung: v1 vs v2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#der-kern-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Kern-Shift:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anhang-a-oberstufen-anpassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anhang A: Oberstufen-Anpassung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anhang A: Oberstufen-Anpassung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persona-shift-in-der-oberstufe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persona-Shift in der Oberstufe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konsequenz-fuer-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Konsequenz fuer v2:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aber-weiterhin-beachten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aber weiterhin beachten:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anhang-b-glossar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anhang B: Glossar
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR.RETTER v3: Motivations-Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     TEMPLATES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+     TEMPLATES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../_TEMPLATES/stock-item-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    {Feature-Name}
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-ist-neu-in-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was ist neu in v2?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#die-drei-saeulen-von-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die drei Saeulen von v2:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kern-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kern-Insight:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-das-was-war-dran-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Das "Was war dran?"-Problem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Das &#34;Was war dran?&#34;-Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#die-realitaet-in-deutschen-klassenzimmern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Die Realitaet in deutschen Klassenzimmern:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warum-das-ein-fundamentales-problem-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warum das ein fundamentales Problem ist:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-kontext-vorteil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Kontext-Vorteil:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-compound-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Compound Effect:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-neue-features-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Neue Features v2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Neue Features v2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-stundenplan-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Stundenplan-Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-kollaborative-stoff-erfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Kollaborative Stoff-Erfassung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-frag-die-klasse-mechanik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 "Frag die Klasse"-Mechanik
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-unterrichts-historie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Unterrichts-Historie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-angepasste-user-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Angepasste User Journey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Angepasste User Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v1-journey-zur-erinnerung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1 Journey (zur Erinnerung):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v2-journey-erweitert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2 Journey (erweitert):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-vergleich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey-Vergleich:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-kst-pfad-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. KST-Pfad Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. KST-Pfad Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-ist-der-kst-pfad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was ist der KST-Pfad?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-lernt-die-ki-ueber-den-schueler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was lernt die KI ueber den Schueler?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#welche-daten-sammeln-wir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Welche Daten sammeln wir?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datenmodell-fuer-kst-vorbereitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datenmodell fuer KST-Vorbereitung:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wie-bereitet-das-den-kst-graphen-vor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wie bereitet das den KST-Graphen vor?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sofortiger-nutzen-ohne-vollstaendigen-kst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sofortiger Nutzen (ohne vollstaendigen KST):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-klassenverband-lite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Klassenverband-Lite
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Klassenverband-Lite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-es-nicht-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was es NICHT ist:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-es-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was es IST:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#der-klassenverband-als-datenpool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Klassenverband als Datenpool:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anonymitaets-optionen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anonymitaets-Optionen:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cold-start-loesung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cold-Start-Loesung:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-technische-erweiterungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Technische Erweiterungen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Technische Erweiterungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-erweitertes-datenmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Erweitertes Datenmodell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-push-notification-strategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Push-Notification-Strategie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-api-erweiterungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 API-Erweiterungen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-risiken-mitigationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Risiken &amp; Mitigationen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Risiken &amp; Mitigationen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-was-wenn-niemand-antwortet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Was wenn niemand antwortet?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-qualitaet-der-schueler-eingaben" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Qualitaet der Schueler-Eingaben
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-privacy-im-klassenverband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Privacy im Klassenverband
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-technische-risiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Technische Risiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-adoption-risiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Adoption-Risiken
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-mvp-scope-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. MVP-Scope v2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. MVP-Scope v2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-phase-1-sprint-1-2-core-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Phase 1: Sprint 1-2 (Core v2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-phase-2-sprint-3-4-klassenverband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Phase 2: Sprint 3-4 (Klassenverband)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-phase-3-sprint-5-6-kst-basis-polish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Phase 3: Sprint 5-6 (KST-Basis + Polish)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-timeline-uebersicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Timeline-Uebersicht
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-erfolgsmetriken-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Erfolgsmetriken v2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-zusammenfassung-v1-vs-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Zusammenfassung: v1 vs v2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Zusammenfassung: v1 vs v2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#der-kern-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Der Kern-Shift:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anhang-a-oberstufen-anpassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anhang A: Oberstufen-Anpassung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anhang A: Oberstufen-Anpassung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persona-shift-in-der-oberstufe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persona-Shift in der Oberstufe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konsequenz-fuer-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Konsequenz fuer v2:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aber-weiterhin-beachten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aber weiterhin beachten:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anhang-b-glossar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anhang B: Glossar
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mvp-konzept-klausurretter-v2">MVP-Konzept: KLAUSUR.RETTER v2</h1>
+<blockquote>
+<p><strong>Status:</strong> Konzept nach Validierung v1 | <strong>Datum:</strong> 2026-01-01
+<strong>Aufbauend auf:</strong> KLAUSUR.RETTER v1 (validiert)
+<strong>Kern-Evolution:</strong> Von "Crash-Kurs" zu "Kontextbasierter Klausur-Vorbereitung"</p>
+</blockquote>
+<hr />
+<h2 id="1-executive-summary">1. Executive Summary</h2>
+<h3 id="was-ist-neu-in-v2">Was ist neu in v2?</h3>
+<p><strong>v1</strong> war der Panik-Button: "Klausur in 3 Tagen? Hier ist dein Crash-Kurs."</p>
+<p><strong>v2</strong> geht einen Schritt zurueck und fragt: <em>"Aber was genau kommt dran?"</em></p>
+<table>
+<thead>
+<tr>
+<th>v1</th>
+<th>v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generischer Stoff ("Quadratische Funktionen")</td>
+<td><strong>Euer</strong> Stoff ("Wie ihr es gemacht habt")</td>
+</tr>
+<tr>
+<td>User gibt Thema ein</td>
+<td>App weiss, was im Unterricht war</td>
+</tr>
+<tr>
+<td>Einzelkaempfer</td>
+<td>Klassenverband als Wissens-Quelle</td>
+</tr>
+<tr>
+<td>Erklaerungen "von der Stange"</td>
+<td>Erklaerungen basierend auf Schüler-Profil</td>
+</tr>
+</tbody>
+</table>
+<h3 id="die-drei-saeulen-von-v2">Die drei Saeulen von v2:</h3>
+<div class="highlight"><pre><span></span><code>+-------------------+     +----------------------+     +------------------+
+|   STUNDENPLAN     |     |   KOLLABORATIVE      |     |   KST-PFAD       |
+|   INTEGRATION     |     |   STOFF-ERFASSUNG    |     |   INTEGRATION    |
++-------------------+     +----------------------+     +------------------+
+        |                          |                           |
+        v                          v                           v
+  &quot;Wann hattest        &quot;Was war dran?&quot;            &quot;Wie lernst DU
+   du Mathe?&quot;           (alle fragen)              am besten?&quot;
+        |                          |                           |
+        +------------&gt;-------------+-------------&lt;-------------+
+                                   |
+                                   v
+                    +-----------------------------+
+                    |  SMARTER KLAUSUR-SCOPE      |
+                    |  &quot;Binomische Formeln,       |
+                    |   WIE IHR SIE GEMACHT HABT&quot; |
+                    +-----------------------------+
+</code></pre></div>
+<h3 id="kern-insight">Kern-Insight:</h3>
+<blockquote>
+<p><strong>Die beste Klausur-Vorbereitung ist die, die weiss, was der Lehrer gemacht hat.</strong></p>
+</blockquote>
+<hr />
+<h2 id="2-das-was-war-dran-problem">2. Das "Was war dran?"-Problem</h2>
+<h3 id="die-realitaet-in-deutschen-klassenzimmern">Die Realitaet in deutschen Klassenzimmern:</h3>
+<div class="highlight"><pre><span></span><code>ELTERNTEIL: &quot;Ihr schreibt in 2 Tagen Mathe. Gelernt?&quot;
+SCHUELER:   &quot;Geht so.&quot;
+
+ELTERNTEIL: &quot;Was kommt dran?&quot;
+SCHUELER:   &quot;Bin nicht ganz sicher.&quot;
+
+ELTERNTEIL: &quot;Was habt ihr gemacht?&quot;
+SCHUELER:   &quot;Weiss nicht.&quot;
+</code></pre></div>
+<h3 id="warum-das-ein-fundamentales-problem-ist">Warum das ein fundamentales Problem ist:</h3>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Auswirkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unklarer Scope</strong></td>
+<td>Schueler lernt zu viel oder zu wenig</td>
+</tr>
+<tr>
+<td><strong>Falsche Prioritaeten</strong></td>
+<td>Zeit auf unwichtige Themen verschwendet</td>
+</tr>
+<tr>
+<td><strong>Generische Erklaerungen</strong></td>
+<td>"So macht man es" statt "So hat EUER Lehrer es erklaert"</td>
+</tr>
+<tr>
+<td><strong>Fehlende Beispiele</strong></td>
+<td>Uebungsaufgaben passen nicht zum Unterrichts-Stil</td>
+</tr>
+</tbody>
+</table>
+<h3 id="der-kontext-vorteil">Der Kontext-Vorteil:</h3>
+<div class="highlight"><pre><span></span><code>OHNE KONTEXT (v1):
+&quot;Erklaere mir binomische Formeln&quot;
+    -&gt; Generische Erklaerung aus dem Lehrbuch
+    -&gt; 3 Standard-Aufgaben
+    -&gt; Hoffnung, dass es passt
+
+MIT KONTEXT (v2):
+&quot;Erklaere mir binomische Formeln wie wir sie in Mathe hatten&quot;
+    -&gt; Ihr habt zuerst die Herleitung am Quadrat gemacht
+    -&gt; Dann kam Herr Mueller mit seinem &quot;Merkspruch&quot;
+    -&gt; Diese 5 Aufgabentypen kamen in der Uebung dran
+    -&gt; DARAUF basiert die Erklaerung
+</code></pre></div>
+<h3 id="der-compound-effect">Der Compound Effect:</h3>
+<p>Je mehr die KI ueber den Unterricht weiss, desto besser wird sie:</p>
+<div class="highlight"><pre><span></span><code>Woche 1:  &quot;Was sind binomische Formeln?&quot;     -&gt; Standard-Erklaerung
+Woche 4:  &quot;Was sind binomische Formeln?&quot;     -&gt; Basierend auf 12 Unterrichts-Einheiten
+Woche 12: &quot;Was sind binomische Formeln?&quot;     -&gt; + Wissen über Schueler-Staerken/Schwaechen
+</code></pre></div>
+<hr />
+<h2 id="3-neue-features-v2">3. Neue Features v2</h2>
+<h3 id="31-stundenplan-integration">3.1 Stundenplan-Integration</h3>
+<p><strong>Das Feature:</strong>
+Der Schueler hinterlegt einmalig seinen Stundenplan. Die App weiss dann automatisch, wann welches Fach stattfindet.</p>
+<p><strong>Setup-Flow:</strong></p>
+<div class="highlight"><pre><span></span><code>ONBOARDING (einmalig, 2 Minuten):
+
+[1] Welche Schule?
+    &gt; Gymnasium Musterstadt ▼
+
+[2] Welche Klasse/Stufe?
+    &gt; 11. Klasse ▼
+
+[3] Welche Kurse hast du?
+    ☑ Mathe (LK)      ☑ Deutsch (GK)
+    ☑ Englisch (GK)   ☑ Physik (GK)
+    ☐ Bio             ☑ Geschichte (GK)
+
+[4] Stundenplan hochladen oder eingeben:
+    [📷 Foto vom Stundenplan]  oder  [✏️ Manuell eingeben]
+</code></pre></div>
+<p><strong>Stundenplan-Datenmodell:</strong></p>
+<div class="highlight"><pre><span></span><code>+------------------+
+|   STUNDENPLAN    |
++------------------+
+| user_id          |
+| day_of_week      | (1-5)
+| period           | (1-10)
+| subject          | FK -&gt; subjects
+| teacher_name     | (optional)
+| room             | (optional)
++------------------+
+</code></pre></div>
+<p><strong>Was die App damit macht:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Zeitpunkt</th>
+<th>Aktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nach Schulschluss</td>
+<td>Push: "Wie war Mathe heute?"</td>
+</tr>
+<tr>
+<td>Vor Klausur-Setup</td>
+<td>Vorausgefuellt: "Mathe bei Herr Mueller?"</td>
+</tr>
+<tr>
+<td>Bei Erklaerungen</td>
+<td>"Ihr habt das Thema am [Datum] gemacht"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="32-kollaborative-stoff-erfassung">3.2 Kollaborative Stoff-Erfassung</h3>
+<p><strong>Das Problem:</strong>
+Kein einzelner Schueler weiss alles, was im Unterricht passiert ist.</p>
+<p><strong>Die Loesung:</strong>
+Aggregiertes Wissen aus dem Klassenverband.</p>
+<p><strong>Wie es funktioniert:</strong></p>
+<div class="highlight"><pre><span></span><code>NACH MATHE-STUNDE (15:30 Uhr):
+
+App an ALLE Mathe-11LK-Mueller:
+
++----------------------------------------+
+|  Was war heute in Mathe dran?          |
+|                                        |
+|  [ ] Neues Thema angefangen            |
+|  [ ] Weiter am aktuellen Thema         |
+|  [ ] Uebungen / Aufgaben               |
+|  [ ] Klausur-Vorbereitung              |
+|  [ ] Klausur-Besprechung               |
+|                                        |
+|  Kurz-Notiz (optional):                |
+|  [________________________________]    |
+|                                        |
+|  [📷 Foto hinzufuegen]                 |
+|                                        |
+|  [  Fertig  ]      [Uebersprungen]     |
++----------------------------------------+
+</code></pre></div>
+<p><strong>Aggregations-Logik:</strong></p>
+<div class="highlight"><pre><span></span><code>EINGABEN VON 5 SCHUELERN:
+
+Leonie:  &quot;Neues Thema - Integrale&quot;
+Max:     &quot;Integrale, erste Aufgaben&quot;
+Emma:    [Foto vom Tafelbild]
+Yusuf:   &quot;Weiter am aktuellen Thema&quot;
+Tim:     [uebersprungen]
+
+         |
+         v
+
+AGGREGIERTES ERGEBNIS:
++---------------------------------------+
+| MATHE 11LK | 15.03.2026 | 3. Stunde   |
++---------------------------------------+
+| Thema: Integrale (NEU)                |
+| Details: Einfuehrung + erste Aufgaben |
+| Anhang: 1 Tafelbild                   |
+| Confidence: HIGH (4/5 Antworten)      |
++---------------------------------------+
+</code></pre></div>
+<hr />
+<h3 id="33-frag-die-klasse-mechanik">3.3 "Frag die Klasse"-Mechanik</h3>
+<p><strong>Szenario:</strong>
+Die KI soll bei einer Klausur-Vorbereitung helfen, aber es gibt keine Unterrichts-Daten fuer ein bestimmtes Thema.</p>
+<p><strong>Der Flow:</strong></p>
+<div class="highlight"><pre><span></span><code>SCHUELER: &quot;Bereite mich auf die Mathe-Klausur vor&quot;
+
+KI: &quot;Ich sehe, ihr habt am 10.03. &#39;Integrale&#39; angefangen.
+     Aber fuer den 12.03. und 14.03. fehlen mir Infos.
+
+     Soll ich deine Klasse fragen, was da dran war?
+
+     [Ja, frag die Klasse]  [Nein, ich gebe es selbst ein]&quot;
+
+         |
+         v (User klickt &quot;Ja&quot;)
+
+PUSH AN KLASSENVERBAND:
+&quot;Hey! Leon bereitet sich auf die Mathe-Klausur vor.
+ Was war am 12.03. und 14.03. in Mathe dran?
+
+ [Ich weiss es!]&quot;
+</code></pre></div>
+<p><strong>Anreiz-System:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aktion</th>
+<th>Belohnung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unterrichts-Info beitragen</td>
+<td>+5 "Helfer-Punkte"</td>
+</tr>
+<tr>
+<td>Foto vom Tafelbild teilen</td>
+<td>+10 Punkte</td>
+</tr>
+<tr>
+<td>Luecke fuer anderen fuellen</td>
+<td>+15 Punkte</td>
+</tr>
+<tr>
+<td>Top-Beitraeger der Woche</td>
+<td>Badge + Priority-Support</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="34-unterrichts-historie">3.4 Unterrichts-Historie</h3>
+<p><strong>Was gespeichert wird:</strong></p>
+<div class="highlight"><pre><span></span><code>+------------------------------------------+
+|           UNTERRICHTS-EINTRAG            |
++------------------------------------------+
+| id:           uuid                       |
+| class_id:     &quot;11LK-Mathe-Mueller&quot;       |
+| date:         2026-03-15                 |
+| period:       3                          |
++------------------------------------------+
+| topic:        &quot;Integrale&quot;                |
+| subtopic:     &quot;Einfuehrung Stammfunktion&quot;|
+| activity:     [&quot;erklaerung&quot;, &quot;uebung&quot;]   |
+| materials:    [foto_id_1, foto_id_2]     |
++------------------------------------------+
+| contributors: [user_1, user_2, user_3]   |
+| confidence:   0.85                       |
+| verified_by:  null (oder teacher_id)     |
++------------------------------------------+
+</code></pre></div>
+<p><strong>Zeitliche Ansicht:</strong></p>
+<div class="highlight"><pre><span></span><code>MATHE 11LK - UNTERRICHTS-HISTORIE:
+
+Maerz 2026
++-------+-------+-------+-------+-------+
+|  Mo   |  Di   |  Mi   |  Do   |  Fr   |
++-------+-------+-------+-------+-------+
+|       |       | 3.    |       | 5.    |
+|       |       | Abl.  |       | Abl.  |
+|       |       | Regeln|       | Uebung|
++-------+-------+-------+-------+-------+
+| 8.    |       | 10.   |       | 12.   |
+| Ketten|       | Integr|       | ???   |  &lt;- Luecke!
+| regel |       | -ale  |       |       |
++-------+-------+-------+-------+-------+
+| 15.   |       | 17.   |       |       |
+| Stamm |       |KLAUSUR|       |       |
+| funkt.|       |       |       |       |
++-------+-------+-------+-------+-------+
+
+[Luecke am 12.03. fuellen]
+</code></pre></div>
+<hr />
+<h2 id="4-angepasste-user-journey">4. Angepasste User Journey</h2>
+<h3 id="v1-journey-zur-erinnerung">v1 Journey (zur Erinnerung):</h3>
+<div class="highlight"><pre><span></span><code>Panik -&gt; Setup -&gt; Crash-Kurs -&gt; Lernen -&gt; Klausur
+(30s)    (30s)    (generiert)   (3 Tage)
+</code></pre></div>
+<h3 id="v2-journey-erweitert">v2 Journey (erweitert):</h3>
+<div class="highlight"><pre><span></span><code>+------------------------------------------------------------------+
+|                        PHASE 0: ONBOARDING                       |
++------------------------------------------------------------------+
+|                                                                  |
+|  [Stundenplan hinterlegen] -&gt; [Klassenverband beitreten/erstellen]|
+|                                                                  |
+|  Einmalig, 3-5 Minuten                                           |
++------------------------------------------------------------------+
+                                |
+                                v
++------------------------------------------------------------------+
+|                    PHASE 1: KONTINUIERLICH                       |
++------------------------------------------------------------------+
+|                                                                  |
+|  Nach jeder Stunde: &quot;Was war dran?&quot; (10 Sekunden)                |
+|                                                                  |
+|  +----------------+     +----------------+     +----------------+ |
+|  | Mo: Mathe      |     | Di: Deutsch    |     | Mi: Mathe      | |
+|  | &quot;Kettenregel&quot;  |     | &quot;Faust Akt 2&quot;  |     | &quot;Uebungen&quot;     | |
+|  +----------------+     +----------------+     +----------------+ |
+|                                                                  |
+|  -&gt; Unterrichts-Historie waechst automatisch                     |
++------------------------------------------------------------------+
+                                |
+                                v
++------------------------------------------------------------------+
+|                    PHASE 2: KLAUSUR-ANKUENDIGUNG                 |
++------------------------------------------------------------------+
+|                                                                  |
+|  &quot;Mathe-Klausur am 17.03. - Integrale&quot;                           |
+|                                                                  |
+|  App WEISS SCHON:                                                |
+|  - Themen seit letzter Klausur: Ableitungen, Kettenregel, Integr.|
+|  - 6 erfasste Unterrichtsstunden                                 |
+|  - 3 Tafelbilder von Klassenkameraden                            |
+|  - 1 Luecke (12.03. - wird abgefragt)                            |
++------------------------------------------------------------------+
+                                |
+                                v
++------------------------------------------------------------------+
+|                    PHASE 3: SMARTER CRASH-KURS                   |
++------------------------------------------------------------------+
+|                                                                  |
+|  STATT generisch:          JETZT kontextbasiert:                 |
+|                                                                  |
+|  &quot;Integrale allgemein&quot;     &quot;Integrale wie bei Herr Mueller&quot;      |
+|  3 Standard-Aufgaben       Aufgaben basierend auf euren Uebungen |
+|  Eine Erklaerung           Erklaerung passend zu DEINEM Profil   |
+|                                                                  |
++------------------------------------------------------------------+
+                                |
+                                v
++------------------------------------------------------------------+
+|                    PHASE 4: LERNEN MIT KONTEXT                   |
++------------------------------------------------------------------+
+|                                                                  |
+|  KI: &quot;Ihr habt am 10.03. die Stammfunktion eingefuehrt.          |
+|       Hier ist das Tafelbild von Emma:                           |
+|       [Bild]                                                     |
+|                                                                  |
+|       Basierend darauf: Erklaerung + 3 Aufgaben&quot;                 |
+|                                                                  |
+|  Schueler: &quot;Ich haeng bei Aufgabe 2&quot;                             |
+|                                                                  |
+|  KI: &quot;Du hattest bei Kettenregel auch Probleme mit der           |
+|       Notation. Hier ist eine alternative Schreibweise...&quot;       |
+|                                                                  |
++------------------------------------------------------------------+
+</code></pre></div>
+<h3 id="journey-vergleich">Journey-Vergleich:</h3>
+<table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>v1</th>
+<th>v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Onboarding</strong></td>
+<td>30 Sekunden</td>
+<td>3-5 Minuten (einmalig)</td>
+</tr>
+<tr>
+<td><strong>Zwischen Klausuren</strong></td>
+<td>Keine Interaktion</td>
+<td>Taegliche 10-Sekunden-Checks</td>
+</tr>
+<tr>
+<td><strong>Klausur-Setup</strong></td>
+<td>User gibt alles ein</td>
+<td>Vieles vorausgefuellt</td>
+</tr>
+<tr>
+<td><strong>Erklaerungen</strong></td>
+<td>Generisch</td>
+<td>Basierend auf Unterricht + Profil</td>
+</tr>
+<tr>
+<td><strong>Uebungsaufgaben</strong></td>
+<td>Standard</td>
+<td>Angelehnt an echte Uebungen</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-kst-pfad-integration">5. KST-Pfad Integration</h2>
+<h3 id="was-ist-der-kst-pfad">Was ist der KST-Pfad?</h3>
+<p><strong>Knowledge Space Theory (KST)</strong> ist ein mathematisches Modell, das Wissen als Graph darstellt:
+- Knoten = Faehigkeiten/Konzepte
+- Kanten = Abhaengigkeiten ("Um X zu verstehen, muss man Y koennen")</p>
+<p><strong>In v2 legen wir die Grundlage dafuer.</strong></p>
+<h3 id="was-lernt-die-ki-ueber-den-schueler">Was lernt die KI ueber den Schueler?</h3>
+<div class="highlight"><pre><span></span><code>+------------------------------------------+
+|           SCHUELER-PROFIL                |
++------------------------------------------+
+|                                          |
+|  ERKLAER-PRAEFERENZEN:                   |
+|  +------------------------------------+  |
+|  | Visuell      [=========&gt;  ] 85%    |  |
+|  | Beispiele    [=======&gt;    ] 70%    |  |
+|  | Formal       [===&gt;        ] 30%    |  |
+|  | Analogien    [========&gt;   ] 75%    |  |
+|  | Schritt-fuer-Schritt [==&gt;] 90%     |  |
+|  +------------------------------------+  |
+|                                          |
+|  KONZEPT-STAERKEN (Mathe):               |
+|  +------------------------------------+  |
+|  | Grundrechenarten    [SOLID]        |  |
+|  | Bruchrechnung       [SOLID]        |  |
+|  | Lineare Funktionen  [SOLID]        |  |
+|  | Quadr. Funktionen   [OK]           |  |
+|  | Ableitungsregeln    [LUECKE]       |  |  &lt;- Schwachstelle!
+|  | Kettenregel         [LUECKE]       |  |
+|  | Integrale           [NEU]          |  |
+|  +------------------------------------+  |
+|                                          |
+|  LERN-MUSTER:                            |
+|  - Beste Zeit: Abends (19-22 Uhr)        |
+|  - Session-Dauer: ~25 Minuten            |
+|  - Braucht Pausen nach 3 Aufgaben        |
+|  - Gibt oft nach 2. Fehlversuch auf      |
+|                                          |
++------------------------------------------+
+</code></pre></div>
+<h3 id="welche-daten-sammeln-wir">Welche Daten sammeln wir?</h3>
+<table>
+<thead>
+<tr>
+<th>Datenpunkt</th>
+<th>Quelle</th>
+<th>Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Antwort-Zeit pro Aufgabe</strong></td>
+<td>Uebungen</td>
+<td>Konzept-Beherrschung</td>
+</tr>
+<tr>
+<td><strong>Fehler-Muster</strong></td>
+<td>Falsche Antworten</td>
+<td>Luecken identifizieren</td>
+</tr>
+<tr>
+<td><strong>Erklaer-Weg-Wahl</strong></td>
+<td>5-Wege-Erklaerer</td>
+<td>Praeferenz-Profil</td>
+</tr>
+<tr>
+<td><strong>Hilfe-Anfragen</strong></td>
+<td>"Ich haeng"-Klicks</td>
+<td>Schwierigkeits-Mapping</td>
+</tr>
+<tr>
+<td><strong>Session-Laenge</strong></td>
+<td>Timestamps</td>
+<td>Optimale Lern-Portionen</td>
+</tr>
+<tr>
+<td><strong>Erfolg nach Erklaerung</strong></td>
+<td>Folge-Aufgaben</td>
+<td>Erklaer-Effektivitaet</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datenmodell-fuer-kst-vorbereitung">Datenmodell fuer KST-Vorbereitung:</h3>
+<div class="highlight"><pre><span></span><code>+------------------+     +------------------+     +------------------+
+|   CONCEPT        |     |   SKILL_STATE    |     |   INTERACTION    |
++------------------+     +------------------+     +------------------+
+| id               |     | user_id          |     | id               |
+| name             |&lt;----| concept_id       |     | user_id          |
+| subject          |     | state            |     | concept_id       |
+| prerequisites[]  |     | (new/learning/   |     | type             |
+| difficulty       |     |  solid/mastered) |     | (attempt/help/   |
++------------------+     | confidence       |     |  explanation)    |
+                         | last_assessed    |     | success          |
+                         +------------------+     | timestamp        |
+                                                  | metadata (JSON)  |
+                                                  +------------------+
+</code></pre></div>
+<h3 id="wie-bereitet-das-den-kst-graphen-vor">Wie bereitet das den KST-Graphen vor?</h3>
+<div class="highlight"><pre><span></span><code>PHASE 1 (v2): Daten sammeln
+================================
+
+User loest Aufgaben
+      |
+      v
+System trackt:
+- Erfolg/Misserfolg
+- Hilfe-Nutzung
+- Zeit benoetigt
+      |
+      v
+Skill-States werden aktualisiert
+
+
+PHASE 2 (v3+): Graph aufbauen
+================================
+
+Aus den Daten entsteht:
+
+            [Grundlagen]
+                 |
+        +--------+--------+
+        |                 |
+   [Brueche]        [Potenzen]
+        |                 |
+        +--------+--------+
+                 |
+           [Funktionen]
+                 |
+        +--------+--------+
+        |                 |
+  [Ableitungen]     [Grenzwerte]
+        |                 |
+        +--------+--------+
+                 |
+           [Integrale]
+
+Personalisiert fuer jeden Schueler:
+- Gruene Knoten = beherrscht
+- Gelbe Knoten = in Arbeit
+- Rote Knoten = Luecke
+- Graue Knoten = noch nicht erreicht
+</code></pre></div>
+<h3 id="sofortiger-nutzen-ohne-vollstaendigen-kst">Sofortiger Nutzen (ohne vollstaendigen KST):</h3>
+<p>Auch ohne den kompletten Graphen koennen wir:</p>
+<ol>
+<li><strong>Luecken erkennen:</strong> "Du hast bei Kettenregel Probleme - wollen wir das zuerst auffrischen?"</li>
+<li><strong>Erklaerungen personalisieren:</strong> "Du lernst am besten mit Beispielen - hier ist eines..."</li>
+<li><strong>Aufgaben anpassen:</strong> Nicht zu leicht (langweilig), nicht zu schwer (frustrierend)</li>
+<li><strong>Lernzeit optimieren:</strong> "Du bist nach 25 Minuten meist muede - machen wir Pause?"</li>
+</ol>
+<hr />
+<h2 id="6-klassenverband-lite">6. Klassenverband-Lite</h2>
+<h3 id="was-es-nicht-ist">Was es NICHT ist:</h3>
+<div class="highlight"><pre><span></span><code>NICHT:
+- Kein Social Network
+- Keine Chats
+- Keine Profile anschauen
+- Keine Likes/Kommentare
+- Kein &quot;Wer ist online&quot;
+</code></pre></div>
+<h3 id="was-es-ist">Was es IST:</h3>
+<div class="highlight"><pre><span></span><code>IST:
+- Kollaborative Wissenssammlung
+- Anonyme Beitraege (optional)
+- Zweck-gebundene Interaktion
+- &quot;Schwarmintelligenz&quot; fuer Unterrichts-Erfassung
+</code></pre></div>
+<h3 id="der-klassenverband-als-datenpool">Der Klassenverband als Datenpool:</h3>
+<div class="highlight"><pre><span></span><code>+----------------------------------------------------------+
+|                    KLASSENVERBAND                        |
+|                   &quot;11LK-Mathe-Mueller&quot;                   |
++----------------------------------------------------------+
+|                                                          |
+|  MITGLIEDER: 24 (von ~30 der Klasse)                     |
+|                                                          |
+|  UNTERRICHTS-HISTORIE:                                   |
+|  - 45 erfasste Stunden (seit September)                  |
+|  - 12 Tafelbilder                                        |
+|  - 3 Arbeitsblatt-Fotos                                  |
+|  - Durchschnittlich 4.2 Beitraege pro Stunde             |
+|                                                          |
+|  AKTIVE KLAUSUR-VORBEREITUNGEN: 8                        |
+|  (fuer Klausur am 17.03.)                                |
+|                                                          |
+|  LUECKEN:                                                |
+|  - 12.03. (keine Daten)                                  |
+|  - 05.03. (nur 1 Beitrag, niedrige Confidence)           |
+|                                                          |
++----------------------------------------------------------+
+</code></pre></div>
+<h3 id="anonymitaets-optionen">Anonymitaets-Optionen:</h3>
+<table>
+<thead>
+<tr>
+<th>Einstellung</th>
+<th>Sichtbar fuer andere</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Offen</strong></td>
+<td>"Emma hat ein Tafelbild geteilt"</td>
+</tr>
+<tr>
+<td><strong>Anonym</strong></td>
+<td>"Jemand hat ein Tafelbild geteilt"</td>
+</tr>
+<tr>
+<td><strong>Versteckt</strong></td>
+<td>Beitraege nur fuer System sichtbar</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Default: Offen</strong> (Social Proof funktioniert)
+<strong>Yusuf-Option: Anonym</strong> (keine Scham)</p>
+<h3 id="cold-start-loesung">Cold-Start-Loesung:</h3>
+<p><strong>Problem:</strong> Klassenverband ist wertlos, wenn nur einer drin ist.</p>
+<p><strong>Loesung: "Einladen beim Beitreten"</strong></p>
+<div class="highlight"><pre><span></span><code>FLOW:
+
+[1] Schueler A joined &quot;11LK-Mathe&quot;
+         |
+         v
+[2] &quot;Du bist der Erste hier!
+     Lade 3 Klassenkameraden ein,
+     um den Klassenverband zu aktivieren.&quot;
+         |
+         v
+[3] [WhatsApp teilen] [Link kopieren]
+
+    &quot;Hey, ich nutz KLAUSUR.RETTER fuer Mathe.
+     Wenn wir zusammen sind, weiss die App
+     was im Unterricht dran war. Join mal!&quot;
+         |
+         v
+[4] 3 Leute joinen -&gt; Klassenverband &quot;aktiv&quot;
+         |
+         v
+[5] Erste Push-Notification nach naechster Mathe-Stunde
+    an ALLE 4 gleichzeitig
+</code></pre></div>
+<p><strong>Kritische Masse:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mitglieder</th>
+<th>Status</th>
+<th>Funktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Inaktiv</td>
+<td>Nur eigene Daten</td>
+</tr>
+<tr>
+<td>3-5</td>
+<td>Minimal</td>
+<td>Basis-Aggregation</td>
+</tr>
+<tr>
+<td>6-10</td>
+<td>Aktiv</td>
+<td>Zuverlaessige Daten</td>
+</tr>
+<tr>
+<td>11+</td>
+<td>Optimal</td>
+<td>Hohe Confidence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fallback wenn Cold Start scheitert:</strong></p>
+<p>Solo-Modus bleibt voll funktional:
+- User gibt selbst ein, was dran war
+- KI nutzt nur dessen Daten
+- Upgrade-Pfad: "Lade Klassenkameraden ein fuer bessere Vorbereitung"</p>
+<hr />
+<h2 id="7-technische-erweiterungen">7. Technische Erweiterungen</h2>
+<h3 id="71-erweitertes-datenmodell">7.1 Erweitertes Datenmodell</h3>
+<div class="highlight"><pre><span></span><code>+------------------+     +------------------+     +------------------+
+|      USER        |     |   CLASS_GROUP    |     |    SCHEDULE      |
++------------------+     +------------------+     +------------------+
+| id               |     | id               |     | id               |
+| email            |     | school_id        |     | user_id          |
+| name             |&lt;---&gt;| grade            |     | day_of_week      |
+| school_id        |     | subject          |     | period           |
+| grade_level      |     | teacher_name     |     | class_group_id   |
+| created_at       |     | year             |     +------------------+
++------------------+     | invite_code      |
+        |                +------------------+
+        |                        ^
+        v                        |
++------------------+             |
+| CLASS_MEMBERSHIP |-------------+
++------------------+     +------------------+
+| user_id          |     |  LESSON_ENTRY    |
+| class_group_id   |     +------------------+
+| role             |     | id               |
+| joined_at        |     | class_group_id   |
+| anonymous_mode   |     | date             |
++------------------+     | period           |
+                         | topic            |
+                         | subtopic         |
+                         | activity_type    |
+                         | confidence_score |
+                         | created_at       |
+                         +------------------+
+                                 ^
+                                 |
+                         +------------------+
+                         | LESSON_CONTRIB   |
+                         +------------------+
+                         | id               |
+                         | lesson_entry_id  |
+                         | user_id          |
+                         | contribution_type|
+                         | content          |
+                         | attachment_url   |
+                         | created_at       |
+                         +------------------+
+
+
++------------------+     +------------------+
+|  SKILL_STATE     |     |  INTERACTION_LOG |
++------------------+     +------------------+
+| id               |     | id               |
+| user_id          |     | user_id          |
+| concept_id       |     | concept_id       |
+| subject          |     | interaction_type |
+| state            |     | success          |
+| confidence       |     | time_spent_ms    |
+| last_assessed    |     | explanation_used |
+| assessment_count |     | metadata (JSON)  |
++------------------+     | created_at       |
+                         +------------------+
+</code></pre></div>
+<h3 id="72-push-notification-strategie">7.2 Push-Notification-Strategie</h3>
+<p><strong>Notification-Typen:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Typ</th>
+<th>Trigger</th>
+<th>Timing</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Post-Class</strong></td>
+<td>Schulschluss</td>
+<td>15:30</td>
+<td>"Was war in Mathe?"</td>
+</tr>
+<tr>
+<td><strong>Gap-Fill</strong></td>
+<td>Klassenkamerad braucht Info</td>
+<td>Sofort</td>
+<td>"Leon bereitet sich vor. Was war am 12.03.?"</td>
+</tr>
+<tr>
+<td><strong>Klausur-Reminder</strong></td>
+<td>X Tage vor Klausur</td>
+<td>9:00</td>
+<td>"Noch 3 Tage bis Mathe!"</td>
+</tr>
+<tr>
+<td><strong>Squad-Activity</strong></td>
+<td>Freund lernt</td>
+<td>Echtzeit</td>
+<td>"Emma hat 5 Aufgaben geschafft"</td>
+</tr>
+<tr>
+<td><strong>Weekly-Digest</strong></td>
+<td>Sonntag</td>
+<td>18:00</td>
+<td>"Diese Woche: 2 Klausuren"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frequenz-Limits:</strong></p>
+<div class="highlight"><pre><span></span><code>MAX NOTIFICATIONS PRO TAG:
+
+Post-Class:     1 pro Fach (max 3-4 total)
+Gap-Fill:       2 pro Tag
+Klausur:        1 pro Klausur pro Tag
+Squad:          3 pro Tag (batchable)
+Digest:         1 pro Woche
+
+TOTAL MAX:      ~8-10 pro Tag in Spitzenzeiten
+NORMAL:         2-4 pro Tag
+</code></pre></div>
+<p><strong>Smart Timing:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_optimal_notification_time</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">notification_type</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Bestimmt den besten Zeitpunkt basierend auf User-Verhalten</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">notification_type</span> <span class="o">==</span> <span class="s2">&quot;post_class&quot;</span><span class="p">:</span>
+        <span class="c1"># Direkt nach Schulschluss (aus Stundenplan)</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get_school_end_time</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">notification_type</span> <span class="o">==</span> <span class="s2">&quot;gap_fill&quot;</span><span class="p">:</span>
+        <span class="c1"># Wenn User typischerweise aktiv ist</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">get_most_active_time</span><span class="p">()</span>
+
+    <span class="k">elif</span> <span class="n">notification_type</span> <span class="o">==</span> <span class="s2">&quot;klausur_reminder&quot;</span><span class="p">:</span>
+        <span class="c1"># Morgens, aber nicht zu frueh</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">(),</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+    <span class="c1"># Nie zwischen 22:00 und 8:00</span>
+    <span class="c1"># Nie waehrend Unterrichtszeit (aus Stundenplan)</span>
+</code></pre></div>
+<p><strong>Opt-Out Granularitaet:</strong></p>
+<div class="highlight"><pre><span></span><code>NOTIFICATION-EINSTELLUNGEN:
+
+Nach dem Unterricht:     [AN]  [AUS]
+Luecken fuellen:         [AN]  [AUS]
+Klausur-Erinnerungen:    [AN]  [AUS]
+Squad-Updates:           [AN]  [AUS]
+Wochen-Zusammenfassung:  [AN]  [AUS]
+
+Ruhezeiten:
+Von [22:00] bis [08:00] keine Notifications
+</code></pre></div>
+<h3 id="73-api-erweiterungen">7.3 API-Erweiterungen</h3>
+<div class="highlight"><pre><span></span><code>NEUE ENDPOINTS:
+
+# Stundenplan
+POST   /api/schedule                 # Stundenplan anlegen
+GET    /api/schedule                 # Stundenplan abrufen
+PATCH  /api/schedule/:id             # Stunde aktualisieren
+
+# Klassenverband
+POST   /api/class-groups             # Gruppe erstellen
+GET    /api/class-groups/:id         # Gruppe abrufen
+POST   /api/class-groups/:id/join    # Beitreten
+GET    /api/class-groups/:id/members # Mitglieder
+
+# Unterrichts-Erfassung
+POST   /api/lessons                  # Unterricht erfassen
+GET    /api/lessons?class_id=X       # Historie abrufen
+POST   /api/lessons/:id/contribute   # Beitrag hinzufuegen
+GET    /api/lessons/gaps             # Luecken finden
+
+# KST-Daten
+GET    /api/skills/:subject          # Skill-States abrufen
+POST   /api/interactions             # Interaktion loggen
+GET    /api/profile/learning         # Lern-Profil abrufen
+</code></pre></div>
+<hr />
+<h2 id="8-risiken-mitigationen">8. Risiken &amp; Mitigationen</h2>
+<h3 id="81-was-wenn-niemand-antwortet">8.1 Was wenn niemand antwortet?</h3>
+<p><strong>Risiko:</strong> Push nach Schulschluss wird ignoriert.</p>
+<table>
+<thead>
+<tr>
+<th>Szenario</th>
+<th>Wahrscheinlichkeit</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alle ignorieren</td>
+<td>30%</td>
+<td>Gamification: Streak fuer taegliche Erfassung</td>
+</tr>
+<tr>
+<td>Nur 1-2 antworten</td>
+<td>40%</td>
+<td>Aggregation trotzdem moeglich, niedrigere Confidence</td>
+</tr>
+<tr>
+<td>3+ antworten</td>
+<td>30%</td>
+<td>Optimal, hohe Confidence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fallback-Strategie:</strong></p>
+<div class="highlight"><pre><span></span><code>WENN keine Antworten nach 2 Stunden:
+    -&gt; Reminder an aktivste User
+
+WENN immer noch keine Antworten:
+    -&gt; Eintrag mit &quot;keine Daten&quot; markieren
+    -&gt; Bei Klausur-Vorbereitung: &quot;Was war am [Datum]?&quot; direkt fragen
+
+WENN User selbst eingibt:
+    -&gt; Seine Eingabe wird zur Haupt-Quelle
+    -&gt; Spaetere Beitraege anderer ergaenzen
+</code></pre></div>
+<h3 id="82-qualitaet-der-schueler-eingaben">8.2 Qualitaet der Schueler-Eingaben</h3>
+<p><strong>Risiko:</strong> "Keine Ahnung", "War langweilig", Troll-Eingaben</p>
+<p><strong>Qualitaets-Sicherung:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ebene</th>
+<th>Massnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Input-Design</strong></td>
+<td>Strukturierte Auswahl statt Freitext</td>
+</tr>
+<tr>
+<td><strong>Aggregation</strong></td>
+<td>Mehrere Quellen -&gt; Median/Konsens</td>
+</tr>
+<tr>
+<td><strong>Confidence-Score</strong></td>
+<td>Niedrig wenn widersprüchlich</td>
+</tr>
+<tr>
+<td><strong>AI-Parsing</strong></td>
+<td>"Integrale" aus "irgendwas mit Flaechen" extrahieren</td>
+</tr>
+<tr>
+<td><strong>Feedback-Loop</strong></td>
+<td>"Stimmt das?" bei Klausur-Vorbereitung</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Eingabe-Optimierung:</strong></p>
+<div class="highlight"><pre><span></span><code>STATT:
+[Freitextfeld: Was war in Mathe?]
+
+BESSER:
+[1] Was war das Hauptthema?
+    ( ) Neues Thema: [_______________]
+    ( ) Weiter: [Letzte Thema automatisch]
+    ( ) Uebungen
+    ( ) Klausur-bezogen
+
+[2] Hattet ihr neue Aufgabentypen?
+    ( ) Ja  ( ) Nein  ( ) Weiss nicht
+
+[3] Foto hinzufuegen?
+    [📷] (optional)
+</code></pre></div>
+<h3 id="83-privacy-im-klassenverband">8.3 Privacy im Klassenverband</h3>
+<p><strong>Risiko:</strong> Schueler wollen nicht, dass andere wissen was sie lernen.</p>
+<p><strong>Mitigation:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Bedenken</th>
+<th>Loesung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Andere sehen meine Luecken"</td>
+<td>Skill-States sind PRIVAT, nie geteilt</td>
+</tr>
+<tr>
+<td>"Ich will nicht als Streber dastehen"</td>
+<td>Anonymer Modus fuer Beitraege</td>
+</tr>
+<tr>
+<td>"Lehrer koennte mitlesen"</td>
+<td>Klassenverband = nur Schueler, kein Lehrer-Zugang</td>
+</tr>
+<tr>
+<td>"Eltern schnueffeln"</td>
+<td>Separater Eltern-Zugang (opt-in) zeigt nur Fortschritt</td>
+</tr>
+</tbody>
+</table>
+<h3 id="84-technische-risiken">8.4 Technische Risiken</h3>
+<table>
+<thead>
+<tr>
+<th>Risiko</th>
+<th>Wahrscheinlichkeit</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCR versagt bei Tafelbildern</td>
+<td>Mittel</td>
+<td>Mittel</td>
+<td>Fallback: Manuelle Beschreibung</td>
+</tr>
+<tr>
+<td>Push-Fatigue</td>
+<td>Hoch</td>
+<td>Hoch</td>
+<td>Aggressive Frequency-Limits</td>
+</tr>
+<tr>
+<td>Cold-Start Klassenverband</td>
+<td>Hoch</td>
+<td>Mittel</td>
+<td>Solo-Modus als Fallback</td>
+</tr>
+<tr>
+<td>DSGVO bei Klassenverband</td>
+<td>Niedrig</td>
+<td>Hoch</td>
+<td>Klare Einwilligung, Minimal-Daten</td>
+</tr>
+</tbody>
+</table>
+<h3 id="85-adoption-risiken">8.5 Adoption-Risiken</h3>
+<table>
+<thead>
+<tr>
+<th>Risiko</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Zu kompliziert geworden"</td>
+<td>Stundenplan ist einmalig, Rest bleibt einfach</td>
+</tr>
+<tr>
+<td>"Will keinen Klassenverband"</td>
+<td>Komplett optional, Solo funktioniert</td>
+</tr>
+<tr>
+<td>"Taegliche Abfrage nervt"</td>
+<td>Ein-Tap Erfassung, Skip immer moeglich</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-mvp-scope-v2">9. MVP-Scope v2</h2>
+<h3 id="91-phase-1-sprint-1-2-core-v2">9.1 Phase 1: Sprint 1-2 (Core v2)</h3>
+<p><strong>Ziel:</strong> v1 erweitern um Stundenplan + Basis-Unterrichts-Erfassung</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Prioritaet</th>
+<th>Aufwand</th>
+<th>Sprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stundenplan-Setup</strong> (manuell)</td>
+<td>MUST</td>
+<td>2 Tage</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Stundenplan-Foto-Import</strong></td>
+<td>SHOULD</td>
+<td>2 Tage</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Post-Class Notification</strong></td>
+<td>MUST</td>
+<td>1 Tag</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Unterrichts-Eingabe (Solo)</strong></td>
+<td>MUST</td>
+<td>2 Tage</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Unterrichts-Historie Ansicht</strong></td>
+<td>MUST</td>
+<td>1 Tag</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Klausur-Scope mit Historie</strong></td>
+<td>MUST</td>
+<td>2 Tage</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Skill-State Tracking (Basis)</strong></td>
+<td>SHOULD</td>
+<td>2 Tage</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ergebnis Sprint 2:</strong>
+Ein Schueler kann seinen Stundenplan hinterlegen, wird nach Stunden gefragt, und die Klausur-Vorbereitung nutzt diese Daten.</p>
+<h3 id="92-phase-2-sprint-3-4-klassenverband">9.2 Phase 2: Sprint 3-4 (Klassenverband)</h3>
+<p><strong>Ziel:</strong> Kollaborative Erfassung ermoeglichen</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Prioritaet</th>
+<th>Aufwand</th>
+<th>Sprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Klassenverband erstellen/beitreten</strong></td>
+<td>MUST</td>
+<td>2 Tage</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Invite-Flow</strong></td>
+<td>MUST</td>
+<td>1 Tag</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Aggregierte Unterrichts-Eintraege</strong></td>
+<td>MUST</td>
+<td>3 Tage</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>"Frag die Klasse"</strong></td>
+<td>SHOULD</td>
+<td>2 Tage</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Foto-Upload fuer Tafelbilder</strong></td>
+<td>SHOULD</td>
+<td>1 Tag</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Confidence-Score Anzeige</strong></td>
+<td>SHOULD</td>
+<td>1 Tag</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Anonymer Modus</strong></td>
+<td>SHOULD</td>
+<td>1 Tag</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ergebnis Sprint 4:</strong>
+Klassenverband funktioniert, mehrere Schueler tragen bei, Daten werden aggregiert.</p>
+<h3 id="93-phase-3-sprint-5-6-kst-basis-polish">9.3 Phase 3: Sprint 5-6 (KST-Basis + Polish)</h3>
+<p><strong>Ziel:</strong> Lern-Profil aufbauen, UX verfeinern</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Prioritaet</th>
+<th>Aufwand</th>
+<th>Sprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Erklaer-Praeferenz-Tracking</strong></td>
+<td>SHOULD</td>
+<td>2 Tage</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Konzept-Staerken-Dashboard</strong></td>
+<td>SHOULD</td>
+<td>2 Tage</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Personalisierte Erklaerungen</strong></td>
+<td>SHOULD</td>
+<td>3 Tage</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Smart Notification Timing</strong></td>
+<td>SHOULD</td>
+<td>2 Tage</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Weekly Digest</strong></td>
+<td>NICE</td>
+<td>1 Tag</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Onboarding-Optimierung</strong></td>
+<td>MUST</td>
+<td>2 Tage</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ergebnis Sprint 6:</strong>
+v2 Feature-Complete, bereit fuer breiteren Rollout.</p>
+<h3 id="94-timeline-uebersicht">9.4 Timeline-Uebersicht</h3>
+<div class="highlight"><pre><span></span><code>        Sprint 1-2          Sprint 3-4          Sprint 5-6
+        (4 Wochen)          (4 Wochen)          (4 Wochen)
+    +------------------+------------------+------------------+
+    |                  |                  |                  |
+    | STUNDENPLAN      | KLASSENVERBAND   | KST-BASIS        |
+    | + SOLO-ERFASSUNG | + KOLLABORATIV   | + POLISH         |
+    |                  |                  |                  |
+    +------------------+------------------+------------------+
+            |                  |                  |
+            v                  v                  v
+      Einzelner User     3-5 User pro        Personalisierte
+      trackt selbst      Klasse tragen       Erklaerungen
+                         bei
+</code></pre></div>
+<h3 id="95-erfolgsmetriken-v2">9.5 Erfolgsmetriken v2</h3>
+<p><strong>Neue North Star Metric:</strong></p>
+<blockquote>
+<p><strong>"Klausuren mit Kontext"</strong> = Klausur-Vorbereitungen mit &gt;3 erfassten Unterrichtsstunden</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Metrik</th>
+<th>Ziel Monat 1</th>
+<th>Ziel Monat 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stundenplaene angelegt</td>
+<td>500</td>
+<td>3.000</td>
+</tr>
+<tr>
+<td>Taegliche Unterrichts-Eingaben</td>
+<td>200</td>
+<td>1.500</td>
+</tr>
+<tr>
+<td>Aktive Klassenverbaende</td>
+<td>50</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Durchschn. Beitraeger pro Klasse</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Klausuren mit Kontext (&gt;3 Stunden)</td>
+<td>30%</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>Unterrichts-Erfassung Retention (D7)</td>
+<td>25%</td>
+<td>40%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-zusammenfassung-v1-vs-v2">10. Zusammenfassung: v1 vs v2</h2>
+<div class="highlight"><pre><span></span><code>+----------------------------------------------------------+
+|                         v1                                |
++----------------------------------------------------------+
+|                                                          |
+|   SCHUELER --&gt; [Klausur in X Tagen] --&gt; CRASH-KURS       |
+|                                                          |
+|   - Generischer Stoff                                    |
+|   - Standard-Erklaerungen                                |
+|   - Einzelkaempfer                                       |
+|                                                          |
++----------------------------------------------------------+
+                          |
+                          | Evolution
+                          v
++----------------------------------------------------------+
+|                         v2                                |
++----------------------------------------------------------+
+|                                                          |
+|   [Stundenplan] --&gt; [Taegliche Erfassung] --&gt; [Historie] |
+|                             |                            |
+|   [Klassenverband] --------+                            |
+|                             |                            |
+|                             v                            |
+|   SCHUELER --&gt; [Klausur] --&gt; KONTEXT-BASIERTER KURS     |
+|                                   |                      |
+|                    [KST-Profil] --+                      |
+|                                                          |
+|   - EUER Stoff                                           |
+|   - Personalisierte Erklaerungen                         |
+|   - Kollaborative Wissenssammlung                        |
+|                                                          |
++----------------------------------------------------------+
+</code></pre></div>
+<h3 id="der-kern-shift">Der Kern-Shift:</h3>
+<blockquote>
+<p><strong>v1:</strong> "Hilf mir bei Mathe"
+<strong>v2:</strong> "Hilf mir bei UNSEREM Mathe"</p>
+</blockquote>
+<hr />
+<h2 id="anhang-a-oberstufen-anpassung">Anhang A: Oberstufen-Anpassung</h2>
+<h3 id="persona-shift-in-der-oberstufe">Persona-Shift in der Oberstufe</h3>
+<table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>Klasse 9-10</th>
+<th>Oberstufe (11-13)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Motivation</strong></td>
+<td>Meist extrinsisch</td>
+<td>Mehr intrinsisch (Abi!)</td>
+</tr>
+<tr>
+<td><strong>Selbstorganisation</strong></td>
+<td>Gering</td>
+<td>Besser (aber nicht gut)</td>
+</tr>
+<tr>
+<td><strong>Bereitschaft zu investieren</strong></td>
+<td>Niedrig</td>
+<td>Hoeher</td>
+</tr>
+<tr>
+<td><strong>Prokrastination</strong></td>
+<td>Extrem</td>
+<td>Immer noch da, aber bewusster</td>
+</tr>
+</tbody>
+</table>
+<h3 id="konsequenz-fuer-v2">Konsequenz fuer v2:</h3>
+<p>Die erhoehte Investitionsbereitschaft in der Oberstufe erlaubt:</p>
+<ol>
+<li><strong>Laengeres Onboarding</strong> (5 Min statt 30 Sek) - akzeptabel</li>
+<li><strong>Taegliche Micro-Interaktion</strong> - machbar</li>
+<li><strong>Klassenverband-Participation</strong> - wahrscheinlicher</li>
+<li><strong>Skill-Tracking Opt-In</strong> - interessant fuer sie</li>
+</ol>
+<h3 id="aber-weiterhin-beachten">Aber weiterhin beachten:</h3>
+<ul>
+<li>Panik bleibt der Haupttrigger</li>
+<li>"Schnell zum Punkt" ist immer noch wichtig</li>
+<li>Optional-Features muessen wirklich optional bleiben</li>
+<li>Der Prokrastinierer existiert auch in der 12. Klasse</li>
+</ul>
+<hr />
+<h2 id="anhang-b-glossar">Anhang B: Glossar</h2>
+<table>
+<thead>
+<tr>
+<th>Begriff</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Klassenverband</strong></td>
+<td>Gruppe von Schuelern desselben Kurses</td>
+</tr>
+<tr>
+<td><strong>Unterrichts-Historie</strong></td>
+<td>Chronologische Sammlung aller erfassten Stunden</td>
+</tr>
+<tr>
+<td><strong>Skill-State</strong></td>
+<td>Aktueller Beherrschungsgrad eines Konzepts</td>
+</tr>
+<tr>
+<td><strong>KST</strong></td>
+<td>Knowledge Space Theory - Graph-basiertes Wissensmodell</td>
+</tr>
+<tr>
+<td><strong>Confidence-Score</strong></td>
+<td>Zuverlaessigkeit einer Unterrichts-Erfassung (0-1)</td>
+</tr>
+<tr>
+<td><strong>Cold Start</strong></td>
+<td>Problem wenn Feature erst mit Nutzern funktioniert</td>
+</tr>
+<tr>
+<td><strong>Gap-Fill</strong></td>
+<td>Luecken in der Unterrichts-Historie schliessen</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Erstellt: 2026-01-01</em>
+<em>Basis: KLAUSUR.RETTER v1 (validiert)</em>
+<em>Naechste Schritte: Team-Review, dann Sprint-Planung</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

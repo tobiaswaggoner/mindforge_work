@@ -1,0 +1,3851 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI-Native Project Hub für Mind Forge - Die Schmiede des Geistes">
+      
+      
+        <meta name="author" content="Tobias Waggoner (Netzalist GmbH & Co. KG)">
+      
+      
+      
+        <link rel="prev" href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_Pitch_v1/">
+      
+      
+        <link rel="next" href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v2.1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>MVP-Konzept: KLAUSUR.RETTER - Mind Forge</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mvp-konzept-klausurretter" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../../.." title="Mind Forge" class="md-header__button md-logo" aria-label="Mind Forge" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mind Forge
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MVP-Konzept: KLAUSUR.RETTER
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tobiaswaggoner/mindforge_work" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mind Forge
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Hauptnavigation" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Willkommen bei Mind Forge!
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../CLAUDE/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Arbeiten im Mind Forge Repository
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../02_SPARK_CHAMBER/2025-10-29-Multi-Channel-AI-Tutor-with-Memory/" class="md-tabs__link">
+          
+  
+  
+  02 SPARK CHAMBER
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-01-Quiz-Generator-MVP/" class="md-tabs__link">
+          
+  
+  
+  03 THE FORGE
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../04_FORGE_LOG/2025-10-29/" class="md-tabs__link">
+          
+  
+  
+  04 FORGE LOG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../2025-11-20%20Brainstorming%20Dungeons%20%26%20Diplomas/" class="md-tabs__link">
+          
+  
+  
+  05 REFERENCE LIBRARY
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Mind Forge" class="md-nav__button md-logo" aria-label="Mind Forge" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Mind Forge
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tobiaswaggoner/mindforge_work" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mind Forge
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen bei Mind Forge!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CLAUDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arbeiten im Mind Forge Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 SPARK CHAMBER
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 SPARK CHAMBER
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-10-29-Multi-Channel-AI-Tutor-with-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Channel AI-Tutor with Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-11-12-AI-Adaptive-Quiz-Generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-Adaptive Quiz Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-11-12-Educational-Dungeon-Crawler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Educational Dungeon Crawler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../02_SPARK_CHAMBER/2025-11-20-Fallen-Nach-R%C3%A4umung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallen &amp; Dekoration nach Dungeon-Räumung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 THE FORGE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 THE FORGE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Stock
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 Stock
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-01-Quiz-Generator-MVP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz-Generator-MVP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-02-XP-und-Levels-Basis-Gamification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XP &amp; Levels (Basis-Gamification)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-03-Remediation-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remediation-System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-04-Adaptive-Self-Assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Self-Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-05-Quiz-Persistence-und-Sharing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz-Persistence &amp; Sharing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../03_THE_FORGE/01_Stock/2025-11-12-06-Achievements-und-Streaks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Achievements &amp; Streaks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 FORGE LOG
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 FORGE LOG
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../04_FORGE_LOG/2025-10-29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log vom 2025-10-29
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 REFERENCE LIBRARY
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05 REFERENCE LIBRARY
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-20%20Brainstorming%20Dungeons%20%26%20Diplomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-20 Brainstorming Dungeons &amp; Diplomas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-20%20Gemini%20Chat%20Dungeons%20%26%20Diplomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-20 Gemini Chat Dungeons &amp; Diplomas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Brainstorming%20Mindforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-22 Brainstorming Mindforge (Gemini Chat)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Finanzierung%20und%20Monetarisierung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finanzierung und Monetarisierungsstrategie für „Dungeons &amp; Diplomas“ – Bootstrapping-Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Lernkonzept-Ausbau_%20Motivation%20und%20Wissensaufbau/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-22 Mindforge / Dungeons and Diplomas: Eine strategische Analyse zur Konvergenz ludisch-pädagogischer Architekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025-11-22%20Mindforge%20Content%20Ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025-11-22 Mindforge Content Generation: Eine System-Bibel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2026-01-01%20Marketing%20Strategie%20Mindforge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing Strategie Mindforge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2026-01-01%20Mindforge%20Flywheel%20Strategie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mindforge Flywheel Strategie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Knowledge%20Space%20Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Space Theory &amp; Automatisierte Content-Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_10" id="__nav_6_1_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR RETTER
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KLAUSUR RETTER
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20Feedback%20Kinder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 01 01 Feedback Kinder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Brainstorming%20Synthese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP Brainstorming: Synthese aller Erkenntnisse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_Pitch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR.RETTER - Pitch v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP-Konzept: KLAUSUR.RETTER
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP-Konzept: KLAUSUR.RETTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-das-problem-ehrlich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Das Problem (ehrlich)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Das Problem (ehrlich)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-schuler-wirklich-tun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was Schüler WIRKLICH tun:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-existierende-apps-falsch-machen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was existierende Apps falsch machen:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-die-losung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Die Lösung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Die Lösung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-loop-30-sekunden-erklart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Loop (30 Sekunden erklärt):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warum-das-funktioniert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warum das funktioniert:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-zielgruppen-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Zielgruppen-Personas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Zielgruppen-Personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primar-fokus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primär-Fokus:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primär-Fokus:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leonie-15-prokrastiniererin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leonie (15, Prokrastiniererin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emma-18-social-butterfly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emma (18, Social Butterfly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekundar-wird-mitgenommen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekundär (wird mitgenommen):
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sekundär (wird mitgenommen):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#max-16-uberflieger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Max (16, Überflieger)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yusuf-17-stiller-kampfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yusuf (17, Stiller Kämpfer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-feature-set-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Feature-Set MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Feature-Set MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#must-have-woche-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MUST-HAVE (Woche 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#should-have-woche-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHOULD-HAVE (Woche 2-3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice-to-have-post-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NICE-TO-HAVE (Post-MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-user-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. User Journey
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-differenzierung-zu-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Differenzierung zu ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-viral-strategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Viral-Strategie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Viral-Strategie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primarer-loop-panik-squad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primärer Loop: "Panik-Squad"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekundarer-loop-gerettet-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekundärer Loop: "Gerettet-Story"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monetarisierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Monetarisierung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Monetarisierung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-pure-free-monat-1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Pure Free (Monat 1-3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-soft-paywall-monat-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Soft Paywall (Monat 4+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preis-optionen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preis-Optionen:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yusuf-schutz-sozialkomponente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yusuf-Schutz (Sozialkomponente):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Tech-Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Tech-Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aillm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI/LLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathe-validierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mathe-Validierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kosten-schatzung-1000-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kosten-Schätzung (1000 User)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-2-wochen-sprint-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 2-Wochen Sprint-Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 2-Wochen Sprint-Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#woche-1-core-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Woche 1: Core Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#woche-2-social-polish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Woche 2: Social + Polish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-erfolgsmetriken-30-tage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Erfolgsmetriken (30 Tage)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Erfolgsmetriken (30 Tage)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#north-star-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        North Star Metric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primare-metriken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primäre Metriken
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-risiken-mitigationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Risiken &amp; Mitigationen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-warum-nicht-die-ursprungliche-idee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Warum NICHT die ursprüngliche Idee?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Warum NICHT die ursprüngliche Idee?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-sokratischer-tutor-polarisiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 1: Sokratischer Tutor polarisiert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-klassenverband-cold-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 2: Klassenverband = Cold Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-chatgpt-ist-der-echte-konkurrent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 3: ChatGPT ist der echte Konkurrent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-launch-strategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Launch-Strategie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Launch-Strategie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schule-fur-schule-nicht-breiter-deutschland-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Schule für Schule" (nicht breiter Deutschland-Launch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-nachste-schritte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Nächste Schritte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anhang-alternative-konzepte-nicht-gewahlt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anhang: Alternative Konzepte (nicht gewählt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anhang: Alternative Konzepte (nicht gewählt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brain-battle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BRAIN BATTLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schulstoffwtf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCHULSTOFF.WTF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-idee-klassenverband-sokratischer-tutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original-Idee (Klassenverband + Sokratischer Tutor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR.RETTER v2: Kontext-Edition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP-Konzept: KLAUSUR.RETTER v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-01%20MVP%20Konzept%20KLAUSUR.RETTER_v3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KLAUSUR.RETTER v3: Motivations-Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     TEMPLATES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+     TEMPLATES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../_TEMPLATES/stock-item-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    {Feature-Name}
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-das-problem-ehrlich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Das Problem (ehrlich)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Das Problem (ehrlich)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#was-schuler-wirklich-tun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was Schüler WIRKLICH tun:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-existierende-apps-falsch-machen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Was existierende Apps falsch machen:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-die-losung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Die Lösung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Die Lösung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-loop-30-sekunden-erklart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Loop (30 Sekunden erklärt):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warum-das-funktioniert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Warum das funktioniert:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-zielgruppen-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Zielgruppen-Personas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Zielgruppen-Personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primar-fokus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primär-Fokus:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primär-Fokus:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leonie-15-prokrastiniererin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leonie (15, Prokrastiniererin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emma-18-social-butterfly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emma (18, Social Butterfly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekundar-wird-mitgenommen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekundär (wird mitgenommen):
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sekundär (wird mitgenommen):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#max-16-uberflieger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Max (16, Überflieger)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yusuf-17-stiller-kampfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yusuf (17, Stiller Kämpfer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-feature-set-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Feature-Set MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Feature-Set MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#must-have-woche-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MUST-HAVE (Woche 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#should-have-woche-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHOULD-HAVE (Woche 2-3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice-to-have-post-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NICE-TO-HAVE (Post-MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-user-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. User Journey
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-differenzierung-zu-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Differenzierung zu ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-viral-strategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Viral-Strategie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Viral-Strategie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primarer-loop-panik-squad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primärer Loop: "Panik-Squad"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sekundarer-loop-gerettet-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sekundärer Loop: "Gerettet-Story"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monetarisierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Monetarisierung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Monetarisierung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-pure-free-monat-1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Pure Free (Monat 1-3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-soft-paywall-monat-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Soft Paywall (Monat 4+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preis-optionen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preis-Optionen:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yusuf-schutz-sozialkomponente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yusuf-Schutz (Sozialkomponente):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Tech-Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Tech-Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aillm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI/LLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathe-validierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mathe-Validierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kosten-schatzung-1000-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kosten-Schätzung (1000 User)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-2-wochen-sprint-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 2-Wochen Sprint-Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 2-Wochen Sprint-Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#woche-1-core-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Woche 1: Core Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#woche-2-social-polish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Woche 2: Social + Polish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-erfolgsmetriken-30-tage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Erfolgsmetriken (30 Tage)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Erfolgsmetriken (30 Tage)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#north-star-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        North Star Metric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primare-metriken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primäre Metriken
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-risiken-mitigationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Risiken &amp; Mitigationen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-warum-nicht-die-ursprungliche-idee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Warum NICHT die ursprüngliche Idee?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Warum NICHT die ursprüngliche Idee?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-sokratischer-tutor-polarisiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 1: Sokratischer Tutor polarisiert
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-klassenverband-cold-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 2: Klassenverband = Cold Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-chatgpt-ist-der-echte-konkurrent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem 3: ChatGPT ist der echte Konkurrent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-launch-strategie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Launch-Strategie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Launch-Strategie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schule-fur-schule-nicht-breiter-deutschland-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Schule für Schule" (nicht breiter Deutschland-Launch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-nachste-schritte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Nächste Schritte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anhang-alternative-konzepte-nicht-gewahlt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anhang: Alternative Konzepte (nicht gewählt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anhang: Alternative Konzepte (nicht gewählt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brain-battle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BRAIN BATTLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schulstoffwtf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCHULSTOFF.WTF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-idee-klassenverband-sokratischer-tutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original-Idee (Klassenverband + Sokratischer Tutor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mvp-konzept-klausurretter">MVP-Konzept: KLAUSUR.RETTER</h1>
+<blockquote>
+<p><strong>Status:</strong> Brainstorming-Ergebnis | <strong>Datum:</strong> 2026-01-01
+<strong>Erstellt durch:</strong> Deep Research Session mit Claude Opus 4.5</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p><strong>KLAUSUR.RETTER</strong> ist ein MVP-Konzept für eine KI-gestützte Lern-App, die Schülern bei der Klausurvorbereitung hilft. Der Kern: Statt gegen die Prokrastination zu kämpfen, optimieren wir dafür. Die App verwandelt "Panik 3 Tage vor der Klausur" in einen strukturierten Crash-Kurs.</p>
+<p><strong>Tagline:</strong> <em>"Panik? Wir auch nicht. Deine Klausur in 3 Tagen gerettet."</em></p>
+<p><strong>Timeline:</strong> 2-3 Wochen bis MVP
+<strong>Kosten:</strong> ~175€/Monat bei 1000 Usern
+<strong>Ziel:</strong> 500-1000 Beta-User aufbauen</p>
+<hr />
+<h2 id="1-das-problem-ehrlich">1. Das Problem (ehrlich)</h2>
+<h3 id="was-schuler-wirklich-tun">Was Schüler WIRKLICH tun:</h3>
+<ul>
+<li>80% fangen erst 2-3 Tage vor der Klausur an zu lernen</li>
+<li>ChatGPT gibt Antworten, aber keinen Plan</li>
+<li>WhatsApp-Gruppen explodieren mit "Was war nochmal dran?"</li>
+<li>Prokrastination → Panik → Chaos</li>
+</ul>
+<h3 id="was-existierende-apps-falsch-machen">Was existierende Apps falsch machen:</h3>
+<ul>
+<li>Sie wollen Schüler zu "besseren Lernern" erziehen</li>
+<li>Sie ignorieren dass Panik der natürliche Zustand ist</li>
+<li>Sie bieten keine zeitbasierte Struktur ("3 Tage bis Klausur")</li>
+</ul>
+<hr />
+<h2 id="2-die-losung">2. Die Lösung</h2>
+<h3 id="core-loop-30-sekunden-erklart">Core Loop (30 Sekunden erklärt):</h3>
+<ol>
+<li>Schüler gibt ein: "Mathe-Klausur in 3 Tagen, Thema: Quadratische Funktionen"</li>
+<li>App generiert sofort einen priorisierten Crash-Kurs</li>
+<li>Jeden Tag: mundgerechte Lern-Portionen</li>
+<li>Bei Problemen: 5 verschiedene Erklärwege (einer wird klicken)</li>
+<li>Optional: Freunde einladen zum "Panik-Squad" (gemeinsam lernen)</li>
+</ol>
+<h3 id="warum-das-funktioniert">Warum das funktioniert:</h3>
+<ul>
+<li>Akzeptiert Prokrastination als Realität</li>
+<li>Gibt Struktur in der Panik</li>
+<li>Social Pressure durch Squad</li>
+<li>Schneller Value (10 Sekunden bis zum Plan)</li>
+</ul>
+<hr />
+<h2 id="3-zielgruppen-personas">3. Zielgruppen-Personas</h2>
+<h3 id="primar-fokus">Primär-Fokus:</h3>
+<h4 id="leonie-15-prokrastiniererin">Leonie (15, Prokrastiniererin)</h4>
+<ul>
+<li><strong>Pain:</strong> Kann nicht anfangen, macht alles um 23 Uhr</li>
+<li><strong>Need:</strong> Panik-Button, schnelle Hilfe, Dopamin</li>
+<li><strong>Killer-Feature:</strong> "Survival-Modus" mit Timer</li>
+<li><strong>Wie sie kommt:</strong> TikTok, Freundinnen</li>
+</ul>
+<h4 id="emma-18-social-butterfly">Emma (18, Social Butterfly)</h4>
+<ul>
+<li><strong>Pain:</strong> Muss alle koordinieren, ist die Klassen-Info-Zentrale</li>
+<li><strong>Need:</strong> Gruppen-Features, Community</li>
+<li><strong>Killer-Feature:</strong> Panik-Squad mit Leaderboard</li>
+<li><strong>Wie sie kommt:</strong> Lädt alle ein, ist Multiplikatorin</li>
+</ul>
+<h3 id="sekundar-wird-mitgenommen">Sekundär (wird mitgenommen):</h3>
+<h4 id="max-16-uberflieger">Max (16, Überflieger)</h4>
+<ul>
+<li><strong>Pain:</strong> Zeitverschwendung, langweilige einfache Aufgaben</li>
+<li><strong>Need:</strong> Effizienz, Wettbewerb</li>
+<li><strong>Killer-Feature:</strong> Leaderboard, Speedrun</li>
+</ul>
+<h4 id="yusuf-17-stiller-kampfer">Yusuf (17, Stiller Kämpfer)</h4>
+<ul>
+<li><strong>Pain:</strong> Kann niemanden fragen, Scham</li>
+<li><strong>Need:</strong> Anonyme, geduldige Hilfe</li>
+<li><strong>Killer-Feature:</strong> 5-Wege-Erklärer (keine Fragen stellen müssen)</li>
+<li><strong>MUSS:</strong> Kostenlos bleiben (Sozialfaktor)</li>
+</ul>
+<hr />
+<h2 id="4-feature-set-mvp">4. Feature-Set MVP</h2>
+<h3 id="must-have-woche-1-2">MUST-HAVE (Woche 1-2)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Beschreibung</th>
+<th>Aufwand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Klausur-Setup</strong></td>
+<td>Fach, Datum, Thema → Plan generieren</td>
+<td>2 Tage</td>
+</tr>
+<tr>
+<td><strong>5-Wege-Erklärer</strong></td>
+<td>Ein Konzept auf 5 Arten erklärt</td>
+<td>2 Tage</td>
+</tr>
+<tr>
+<td><strong>Tages-Portionen</strong></td>
+<td>Strukturierter täglicher Lernplan</td>
+<td>1 Tag</td>
+</tr>
+<tr>
+<td><strong>Progress-Bar</strong></td>
+<td>Visueller Countdown + Fortschritt</td>
+<td>0.5 Tage</td>
+</tr>
+<tr>
+<td><strong>Übungs-Generator</strong></td>
+<td>KI generiert Aufgaben + Lösungscheck</td>
+<td>2 Tage</td>
+</tr>
+<tr>
+<td><strong>Quick-Foto-Input</strong></td>
+<td>Thema fotografieren → KI versteht</td>
+<td>1 Tag</td>
+</tr>
+</tbody>
+</table>
+<h3 id="should-have-woche-2-3">SHOULD-HAVE (Woche 2-3)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Beschreibung</th>
+<th>Aufwand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Panik-Squad</strong></td>
+<td>Freunde einladen, gemeinsamer Progress</td>
+<td>2 Tage</td>
+</tr>
+<tr>
+<td><strong>Leaderboard</strong></td>
+<td>Wer ist am weitesten?</td>
+<td>0.5 Tage</td>
+</tr>
+<tr>
+<td><strong>Push-Reminders</strong></td>
+<td>"Noch 2 Tage! 3 Aufgaben offen"</td>
+<td>0.5 Tage</td>
+</tr>
+<tr>
+<td><strong>Share-Card</strong></td>
+<td>Post-Klausur Erfolgs-Screenshot</td>
+<td>0.5 Tage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nice-to-have-post-mvp">NICE-TO-HAVE (Post-MVP)</h3>
+<ul>
+<li>Probe-Klausur Generator</li>
+<li>Eltern-Report (Monetarisierungs-Hook)</li>
+<li>Offline-Modus</li>
+<li>Voice-Erklärungen</li>
+</ul>
+<hr />
+<h2 id="5-user-journey">5. User Journey</h2>
+<div class="highlight"><pre><span></span><code>TRIGGER: Sonntag Abend, 21 Uhr - &quot;Scheiße, Mathe-Klausur Donnerstag!&quot;
+
+STEP 1: PANIK-ONBOARDING (30 Sekunden)
+├── Was für eine Klausur? [Mathe]
+├── Wann ist sie? [Donnerstag → 3 Tage]
+├── Welches Thema? [Foto oder Text]
+└── Wie stehst du? [😱 Panik | 😬 Unsicher | 😊 Okay]
+
+STEP 2: CRASH-KURS (10 Sekunden generiert)
+├── TAG 1: Grundlagen (15 Min + 5 Aufgaben)
+├── TAG 2: Vertiefen (20 Min + 8 Aufgaben)
+└── TAG 3: Probe-Klausur (45 Min)
+
+STEP 3: LERNEN MIT SAFETY NET
+├── Aufgabe anzeigen
+├── Lösung eingeben
+├── Bei Problemen: &quot;🆘 ICH HÄNG!&quot;
+│   ├── [📐 Formel]
+│   ├── [🎬 Video-Style]
+│   ├── [🗣️ Wie ein Freund]
+│   ├── [🎮 Beispiel]
+│   └── [🔙 Von Anfang]
+└── Weiter zur nächsten Aufgabe
+
+STEP 4: PANIK-SQUAD (optional)
+├── &quot;Wer schreibt auch Mathe?&quot;
+├── Link teilen → Freunde joinen
+├── Gegenseitiger Progress sichtbar
+└── FOMO als Motivation
+
+STEP 5: POST-KLAUSUR
+├── &quot;Wie lief&#39;s?&quot; [😎 Gerettet | 😅 Ging so | 💀]
+├── Share-Card für Instagram/WhatsApp
+└── &quot;Nächste Klausur?&quot;
+</code></pre></div>
+<hr />
+<h2 id="6-differenzierung-zu-chatgpt">6. Differenzierung zu ChatGPT</h2>
+<table>
+<thead>
+<tr>
+<th>ChatGPT</th>
+<th>KLAUSUR.RETTER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leeres Textfeld - "Was soll ich fragen?"</td>
+<td>"Klausur in 3 Tagen" → fertiger Plan</td>
+</tr>
+<tr>
+<td>Eine Antwort (hoffen dass sie passt)</td>
+<td>5 verschiedene Erklärwege</td>
+</tr>
+<tr>
+<td>Kein Zeitmanagement</td>
+<td>Countdown + tägliche Portionen</td>
+</tr>
+<tr>
+<td>Alleine (keine Accountability)</td>
+<td>Mit Freunden im Squad</td>
+</tr>
+<tr>
+<td>Kein sichtbarer Fortschritt</td>
+<td>Progress-Bar + Achievements</td>
+</tr>
+<tr>
+<td>Versteht Schulkontext nicht</td>
+<td>Gebaut für deutsche Lehrpläne</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Kern-Insight:</strong> ChatGPT ist ein Werkzeug. KLAUSUR.RETTER ist ein Coach.</p>
+<hr />
+<h2 id="7-viral-strategie">7. Viral-Strategie</h2>
+<h3 id="primarer-loop-panik-squad">Primärer Loop: "Panik-Squad"</h3>
+<div class="highlight"><pre><span></span><code>Schüler hat Panik
+      ↓
+Erstellt Klausur-Plan
+      ↓
+&quot;Wer schreibt auch? Lernt zusammen!&quot;
+[WhatsApp teilen]
+      ↓
+Freunde joinen (gleiches Problem!)
+      ↓
+Gegenseitiger Progress → FOMO → mehr Engagement
+      ↓
+Nach Klausur: Erfolg teilen
+      ↓
+Nächste Klausur → Cycle wiederholt
+</code></pre></div>
+<p><strong>Warum es funktioniert:</strong>
+- 3-5 Freunde haben die gleiche Klausur
+- Panik = emotionaler Share-Moment
+- Kein kaltes "Invite your friends" - sondern echtes gemeinsames Problem</p>
+<h3 id="sekundarer-loop-gerettet-story">Sekundärer Loop: "Gerettet-Story"</h3>
+<p>Auto-generierte Share-Card für Instagram:
+<div class="highlight"><pre><span></span><code>😱 → 😎
+Mathe-Klausur GERETTET
+3 Tage Vorbereitung | 47 Aufgaben | 2+
+─────────────────────
+KLAUSUR.RETTER
+</code></pre></div></p>
+<hr />
+<h2 id="8-monetarisierung">8. Monetarisierung</h2>
+<h3 id="phase-1-pure-free-monat-1-3">Phase 1: Pure Free (Monat 1-3)</h3>
+<ul>
+<li>Alles kostenlos, Fokus auf Wachstum</li>
+<li>Daten sammeln für Premium-Features</li>
+</ul>
+<h3 id="phase-2-soft-paywall-monat-4">Phase 2: Soft Paywall (Monat 4+)</h3>
+<table>
+<thead>
+<tr>
+<th>FREE</th>
+<th>PREMIUM (4,99€/Monat)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Klausur gleichzeitig</td>
+<td>Unlimited Klausuren</td>
+</tr>
+<tr>
+<td>3-Wege-Erklärer</td>
+<td>5-Wege-Erklärer</td>
+</tr>
+<tr>
+<td>Basis-Übungen</td>
+<td>Unbegrenzte Übungen</td>
+</tr>
+<tr>
+<td>1 Squad (3 Leute)</td>
+<td>Unbegrenzte Squads</td>
+</tr>
+<tr>
+<td>❌ Probe-Klausuren</td>
+<td>✅ Probe-Klausuren</td>
+</tr>
+<tr>
+<td>❌ Eltern-Report</td>
+<td>✅ Eltern-Report</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preis-optionen">Preis-Optionen:</h3>
+<ul>
+<li><strong>Premium Einzeln:</strong> 4,99€/Monat</li>
+<li><strong>Klausur-Pass:</strong> 9,99€/Quartal (Klausurphasen)</li>
+<li><strong>Familien-Pack:</strong> 7,99€/Monat (alle Kinder)</li>
+</ul>
+<h3 id="yusuf-schutz-sozialkomponente">Yusuf-Schutz (Sozialkomponente):</h3>
+<ul>
+<li>"Ich kann mir das nicht leisten" Option</li>
+<li>Bekommt trotzdem Premium (silent, keine Scham)</li>
+<li>Finanziert durch zahlende Nutzer</li>
+</ul>
+<hr />
+<h2 id="9-tech-stack">9. Tech-Stack</h2>
+<h3 id="frontend">Frontend</h3>
+<ul>
+<li><strong>Next.js 14</strong> (App Router) als PWA</li>
+<li><strong>Tailwind CSS + shadcn/ui</strong></li>
+<li>PWA statt Native App (kein App Store nötig)</li>
+</ul>
+<h3 id="backend">Backend</h3>
+<ul>
+<li><strong>Supabase</strong> (PostgreSQL + Auth + Realtime)</li>
+<li>Region: Frankfurt (DSGVO)</li>
+</ul>
+<h3 id="aillm">AI/LLM</h3>
+<ul>
+<li><strong>Claude API</strong> (claude-3-haiku für Speed, sonnet für Komplexes)</li>
+<li>Prompt-Templates pro Erklärungs-Stil</li>
+</ul>
+<h3 id="ocr">OCR</h3>
+<ul>
+<li><strong>Google Cloud Vision API</strong> (Handschrift)</li>
+<li><strong>Mathpix</strong> als Fallback für Formeln</li>
+</ul>
+<h3 id="mathe-validierung">Mathe-Validierung</h3>
+<ul>
+<li><strong>SymPy</strong> (Python) für algebraische Checks</li>
+</ul>
+<h3 id="hosting">Hosting</h3>
+<ul>
+<li><strong>Vercel</strong> (Frontend)</li>
+<li><strong>Supabase Cloud</strong> (Backend)</li>
+</ul>
+<h3 id="kosten-schatzung-1000-user">Kosten-Schätzung (1000 User)</h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Kosten/Monat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vercel Pro</td>
+<td>20€</td>
+</tr>
+<tr>
+<td>Supabase Pro</td>
+<td>25€</td>
+</tr>
+<tr>
+<td>Claude API</td>
+<td>~100€</td>
+</tr>
+<tr>
+<td>Google Vision</td>
+<td>~30€</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>~175€</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-2-wochen-sprint-plan">10. 2-Wochen Sprint-Plan</h2>
+<h3 id="woche-1-core-loop">Woche 1: Core Loop</h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Supabase Setup, Next.js + Tailwind, Basic Routing</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>Klausur-Setup Flow, Claude Integration, Progress-Tracking</td>
+</tr>
+<tr>
+<td>5-7</td>
+<td>5-Wege-Erklärer, Übungs-Generator, Lösungs-Check</td>
+</tr>
+</tbody>
+</table>
+<h3 id="woche-2-social-polish">Woche 2: Social + Polish</h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8-9</td>
+<td>Panik-Squad Feature, Realtime Updates</td>
+</tr>
+<tr>
+<td>10-11</td>
+<td>Foto-Upload + OCR, Push Notifications</td>
+</tr>
+<tr>
+<td>12-13</td>
+<td>Share-Card, Landing Page</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Testing, Bug Fixes, Soft Launch (50 Schüler)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-erfolgsmetriken-30-tage">11. Erfolgsmetriken (30 Tage)</h2>
+<h3 id="north-star-metric">North Star Metric</h3>
+<p><strong>"Gerettete Klausuren"</strong> = User mit &gt;70% Plan-Completion</p>
+<h3 id="primare-metriken">Primäre Metriken</h3>
+<table>
+<thead>
+<tr>
+<th>Metrik</th>
+<th>Ziel Tag 7</th>
+<th>Ziel Tag 30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registrierungen</td>
+<td>200</td>
+<td>2.000</td>
+</tr>
+<tr>
+<td>Klausuren erstellt</td>
+<td>150</td>
+<td>1.500</td>
+</tr>
+<tr>
+<td>Completion Rate (&gt;70%)</td>
+<td>30%</td>
+<td>45%</td>
+</tr>
+<tr>
+<td>Squad-Invite-Rate</td>
+<td>25%</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>D7 Retention</td>
+<td>20%</td>
+<td>30%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="12-risiken-mitigationen">12. Risiken &amp; Mitigationen</h2>
+<table>
+<thead>
+<tr>
+<th>Risiko</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OCR funktioniert schlecht</strong></td>
+<td>Text-Input als Fallback, "Beta" labeln</td>
+</tr>
+<tr>
+<td><strong>AI generiert falsche Lösungen</strong></td>
+<td>SymPy-Validierung für Mathe, Community-Flagging</td>
+</tr>
+<tr>
+<td><strong>Cold-Start Squad</strong></td>
+<td>Squad optional, Solo-Modus muss alleine funktionieren</td>
+</tr>
+<tr>
+<td><strong>Nur einmalige Nutzung</strong></td>
+<td>Push für nächste Klausuren, Kalender-Integration</td>
+</tr>
+<tr>
+<td><strong>DSGVO/Minderjährige</strong></td>
+<td>Minimal-Daten, Server in DE, Eltern-Consent &lt;16</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13-warum-nicht-die-ursprungliche-idee">13. Warum NICHT die ursprüngliche Idee?</h2>
+<p>Die ursprüngliche Idee (Klassenverband + sokratischer Tutor + Mitschriebe teilen) hat folgende Probleme:</p>
+<h3 id="problem-1-sokratischer-tutor-polarisiert">Problem 1: Sokratischer Tutor polarisiert</h3>
+<ul>
+<li>Leonie (Prokrastiniererin): "Zu langsam, zu anstrengend" → Dealbreaker</li>
+<li>Yusuf (Stiller Kämpfer): "Perfekt für mich" → Loves it</li>
+</ul>
+<p><strong>Lösung:</strong> 5-Wege-Erklärer als Alternative - Schüler wählt selbst</p>
+<h3 id="problem-2-klassenverband-cold-start">Problem 2: Klassenverband = Cold Start</h3>
+<ul>
+<li>Feature ist wertlos für die ersten 29 von 30 Schülern</li>
+<li>Niemand tritt bei wenn niemand drin ist</li>
+</ul>
+<p><strong>Lösung:</strong> Solo-Modus als Core, Squad als optionaler Bonus</p>
+<h3 id="problem-3-chatgpt-ist-der-echte-konkurrent">Problem 3: ChatGPT ist der echte Konkurrent</h3>
+<ul>
+<li>Kostenlos, sofort verfügbar, gibt die Antwort</li>
+</ul>
+<p><strong>Lösung:</strong> Kontext + Struktur + Social = was ChatGPT nicht kann</p>
+<hr />
+<h2 id="14-launch-strategie">14. Launch-Strategie</h2>
+<h3 id="schule-fur-schule-nicht-breiter-deutschland-launch">"Schule für Schule" (nicht breiter Deutschland-Launch)</h3>
+<ol>
+<li><strong>3 Pilotschulen identifizieren</strong> (über Michi/Tim?)</li>
+<li><strong>5-10 Seed-User pro Schule</strong> in verschiedenen Klassen</li>
+<li><strong>Erste Klausurphase abwarten</strong> (Oktober/November)</li>
+<li><strong>Messen:</strong> "An Schule X nutzen es 40% der 11. Klasse"</li>
+<li><strong>Nächste Stadt</strong> erst wenn eine Schule "durch" ist</li>
+</ol>
+<h3 id="timing">Timing</h3>
+<ul>
+<li><strong>Optimal:</strong> 2-3 Wochen vor Klausurphase launchen</li>
+<li><strong>Q4 2024:</strong> Erste echte Klausuren nach Sommerferien</li>
+<li><strong>Januar 2025:</strong> Halbjahres-Push</li>
+<li><strong>April-Mai 2025:</strong> Abi-Phase (maximale Panik)</li>
+</ul>
+<hr />
+<h2 id="15-nachste-schritte">15. Nächste Schritte</h2>
+<ol>
+<li><strong>[ ] Entscheidung:</strong> Bauen wir KLAUSUR.RETTER?</li>
+<li><strong>[ ] Team-Briefing:</strong> Michi + Tim als Zielgruppen-Tester</li>
+<li><strong>[ ] Tech-Setup:</strong> Supabase + Next.js Projekt</li>
+<li><strong>[ ] Prompt-Engineering:</strong> 5 Erklärungs-Stile entwickeln</li>
+<li><strong>[ ] Pilotschulen:</strong> 3 Schulen identifizieren</li>
+<li><strong>[ ] Landing Page:</strong> "Coming Soon" mit Warteliste</li>
+</ol>
+<hr />
+<h2 id="anhang-alternative-konzepte-nicht-gewahlt">Anhang: Alternative Konzepte (nicht gewählt)</h2>
+<h3 id="brain-battle">BRAIN BATTLE</h3>
+<ul>
+<li>Quiz-Wettbewerb mit Freunden</li>
+<li><strong>Warum nicht:</strong> Cold-Start-Problem zu groß, Kahoot dominiert den Markt</li>
+</ul>
+<h3 id="schulstoffwtf">SCHULSTOFF.WTF</h3>
+<ul>
+<li>5-Wege-Erklärung für jedes Konzept</li>
+<li><strong>Warum nicht:</strong> Zu nah an ChatGPT-Prompt, kein Lock-in</li>
+</ul>
+<h3 id="original-idee-klassenverband-sokratischer-tutor">Original-Idee (Klassenverband + Sokratischer Tutor)</h3>
+<ul>
+<li><strong>Warum nicht:</strong> Cold-Start, Sokratisch polarisiert, kein klarer Zeitpunkt</li>
+</ul>
+<hr />
+<p><em>Erstellt durch Multi-Agent Deep Research Session</em>
+<em>Nächste Review: Nach Team-Feedback</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
